@@ -12,7 +12,6 @@
 		5D06C68219D8CFFE0082F2DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D06C68019D8CFFE0082F2DE /* Main.storyboard */; };
 		5D06C68419D8CFFE0082F2DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D06C68319D8CFFE0082F2DE /* Images.xcassets */; };
 		5D06C69319D8CFFE0082F2DE /* Lesson01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06C69219D8CFFE0082F2DE /* Lesson01Tests.swift */; };
-		D49D22191A37E30E00A87651 /* project 1 copy in Resources */ = {isa = PBXBuildFile; fileRef = D49D22181A37E30E00A87651 /* project 1 copy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +34,6 @@
 		5D06C68C19D8CFFE0082F2DE /* Lesson01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lesson01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D06C69119D8CFFE0082F2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D06C69219D8CFFE0082F2DE /* Lesson01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson01Tests.swift; sourceTree = "<group>"; };
-		D49D22181A37E30E00A87651 /* project 1 copy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "project 1 copy"; path = "Lesson01.xcodeproj/project 1 copy"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +57,6 @@
 		5D06C66E19D8CFFE0082F2DE = {
 			isa = PBXGroup;
 			children = (
-				D49D22181A37E30E00A87651 /* project 1 copy */,
 				5D06C67919D8CFFE0082F2DE /* Lesson01 */,
 				5D06C68F19D8CFFE0082F2DE /* Lesson01Tests */,
 				5D06C67819D8CFFE0082F2DE /* Products */,
@@ -193,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D06C68219D8CFFE0082F2DE /* Main.storyboard in Resources */,
-				D49D22191A37E30E00A87651 /* project 1 copy in Resources */,
 				5D06C68419D8CFFE0082F2DE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
