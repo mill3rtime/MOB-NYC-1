@@ -185,29 +185,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFk-kq-Lri">
-                                <rect key="frame" x="117" y="115" width="367" height="465"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pickles-Dill" translatesAutoresizingMaskIntoConstraints="NO" id="VyT-pL-afo">
+                                <rect key="frame" x="180" y="381" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="0Wk-Us-rCV"/>
+                                    <constraint firstAttribute="height" constant="128" id="9Hn-qT-YO2"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ac5-ka-2Ak">
+                                <rect key="frame" x="71" y="106" width="461" height="187"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">- Be able to build apps for myself and execute or prototype my own ideas.
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="xxE-E9-xYh"/>
+                                </constraints>
+                                <string key="text">- Be able to build apps for myself and execute or prototype my own ideas. 
 - Communicate better with the developers on my team</string>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Pickles-Dill" translatesAutoresizingMaskIntoConstraints="NO" id="VyT-pL-afo">
-                                <rect key="frame" x="180" y="382" width="240" height="128"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nFk-kq-Lri" firstAttribute="top" secondItem="O6s-s4-prS" secondAttribute="bottom" constant="51" id="hsY-dV-HwT"/>
-                            <constraint firstItem="nFk-kq-Lri" firstAttribute="leading" secondItem="ZPi-hH-QKn" secondAttribute="leadingMargin" constant="101" id="iVH-BK-Wyi"/>
-                            <constraint firstItem="Ykp-8t-5hG" firstAttribute="top" secondItem="nFk-kq-Lri" secondAttribute="bottom" constant="20" id="sy1-f7-qyb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nFk-kq-Lri" secondAttribute="trailing" constant="100" id="uDu-tS-ZyN"/>
+                            <constraint firstItem="Ac5-ka-2Ak" firstAttribute="top" secondItem="O6s-s4-prS" secondAttribute="bottom" constant="42" id="8Ai-f5-720"/>
+                            <constraint firstAttribute="centerX" secondItem="VyT-pL-afo" secondAttribute="centerX" id="A5H-gB-hPd"/>
+                            <constraint firstItem="Ykp-8t-5hG" firstAttribute="top" secondItem="VyT-pL-afo" secondAttribute="bottom" constant="91" id="S2e-Mq-h7I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ac5-ka-2Ak" secondAttribute="trailing" constant="52" id="WDn-xv-qnF"/>
+                            <constraint firstItem="Ac5-ka-2Ak" firstAttribute="leading" secondItem="ZPi-hH-QKn" secondAttribute="leadingMargin" constant="55" id="nqP-XI-YQ8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Goals" id="g26-ks-isT">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="cw6-kZ-ex7">
+                        <barButtonItem key="rightBarButtonItem" title="Info" id="cw6-kZ-ex7">
                             <connections>
                                 <segue destination="HnG-r1-Jav" kind="show" id="SKA-u2-7t5"/>
                             </connections>
