@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1 -->
+<html lang="en-US" class="chrome"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/cc.js"></script><script type="text/javascript" async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/itunes_autolinkmaker.js"></script><script async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/fbds.js"></script><script type="text/javascript" async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/ga.js"></script><script type="text/javascript" async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/cse.js"></script><script id="facebook-jssdk" async="" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/all.js"></script><script type="text/javascript" lang="en">var rootTag = document.getElementsByTagName("html");var classes = rootTag[0].className;rootTag[0].className = classes.replace("no-js","");if (navigator.appVersion.indexOf("Win")==-1) { classes = rootTag[0].className;rootTag[0].className = classes.replace("windows","") } </script>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+							<title>Intro to Object-Oriented Design in Swift: Part 1/2 - Ray Wenderlich</title>
+									<meta name="twitter:card" content="photo">
+					<meta name="twitter:site" content="@rwenderlich">
+					<meta name="twitter:title" content="Intro to Object-Oriented Design in Swift: Part 1/2 - Ray Wenderlich">
+					<meta name="twitter:description" content="Learn the basics of object-oriented design in Swift. In this first part, you&#39;ll learn about objects and classes, inheritance, and the Model-View-Controller relationship. ">
+					<meta name="twitter:url" content="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1">
+					<meta name="twitter:image" content="">
+									<meta property="og:title" content="Intro to Object-Oriented Design in Swift: Part 1/2 - Ray Wenderlich">
+				<meta property="og:type" content="article">
+				<meta property="og:site_name" content="Ray Wenderlich">
+       		    <meta property="og:url" content="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1">
+				<meta property="og:description" content="Learn the basics of object-oriented design in Swift. In this first part, you&#39;ll learn about objects and classes, inheritance, and the Model-View-Controller relationship. ">
+									<meta property="og:image" content="http://cdn4.raywenderlich.com/wp-content/uploads/2014/11/oop.jpg">
+					
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.7.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Learn the basics of object-oriented design in Swift in this two-part tutorial, including inheritance, polymorphism, and some basic design patterns.">
+<link rel="canonical" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich.html">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="stylesheet" id="wpsqt-main-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-main-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="swiftype-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/autocomplete.css" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-plugin-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/plugin-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="videojs-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/video-js.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-polls-css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/polls-css.css" type="text/css" media="all">
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/player.min.js"></script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery.js"></script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/site.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var swiftypeParams = {"engineKey":"omdTFN4ka9Dq1GBywQZq"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/install_swiftype.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.raywenderlich.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cdn5.raywenderlich.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="shortlink" href="http://www.raywenderlich.com/?p=81952">
+<script type="text/javascript"><!--
+function powerpress_pinw(pinw){window.open('http://www.raywenderlich.com/?powerpress_pinw='+pinw, 'PowerPressPlayer','toolbar=0,status=0,resizable=1,width=460,height=320');	return false;}
+powerpress_url = 'http://cdn1.raywenderlich.com/wp-content/plugins/powerpress/';
+//-->
+</script>
+
+		<script type="text/javascript"> document.createElement("video");document.createElement("audio");document.createElement("track"); </script>
+		<style type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('http://www.raywenderlich.com/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+</style>
+		<link rel="stylesheet" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/print.css" type="text/css" media="print">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.raywenderlich.com/xmlrpc.php">	
+		<script>var siteUrl = 'http://cdn1.raywenderlich.com/wp-content/themes/raywenderlich'</script>
+		<script src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/global_combined.1.0.8.js" type="text/javascript"></script><script type="text/javascript" async="" src="http://s3.buysellads.com/ac/bsa.js"></script><script type="text/javascript" async="" src="http://cdn1.developermedia.com/a.min.js"></script>
+		<script src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery.multi-accordion-1.5.3.js"></script>
+		<script>(function() {
+			var _fbq = window._fbq || (window._fbq = []);
+			if (!_fbq.loaded) {
+			var fbds = document.createElement('script');
+			fbds.async = true;
+			fbds.src = '//connect.facebook.net/en_US/fbds.js';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(fbds, s);
+			_fbq.loaded = true;
+			}
+			_fbq.push(['addPixelId', '915433011818742']);
+			})();
+			window._fbq = window._fbq || [];
+			window._fbq.push(['track', 'PixelInitialized', {}]);
+		</script>
+<noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=915433011818742&amp;amp;ev=PixelInitialized" /&gt;</noscript>
+	<script type="text/javascript" async="" src="http://cdn2.developermedia.com/a.min.js"></script><script src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jsapi" type="text/javascript"></script><script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/saved_resource"></script><script type="text/javascript" src="http://www.google.com/uds/?file=ads&v=3&packages=search&async=2"></script><link type="text/css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/default+en.css" rel="stylesheet"><link type="text/css" href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/default.css" rel="stylesheet"><script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/default+en.I.js"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #BCCDF0;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #336699;
+background-color: #E9E9E9;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #1155CC;
+}
+.gsc-cursor-page {
+color: #1155CC;
+}
+a.gsc-trailing-more-results:link {
+color: #1155CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #333333;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #1155CC;
+}
+.gsc-completion-snippet {
+color: #333333;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000FF;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #663399;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000FF;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000FF;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}
+</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+	
+	<body class="single single-post postid-81952 single-format-standard" data-twttr-rendered="true"> 
+		<div id="wrapper">
+			<header id="branding" class="rw_subservice">
+				<div id="site-details" class="wrapper clearfix rw_subservice">
+					<hgroup id="site-logo" class="clearfix">
+						<h1 id="site-title"><a href="http://www.raywenderlich.com/" title="Ray Wenderlich" class="image" rel="home" sl-processed="1">Ray Wenderlich</a></h1>
+						<h2 id="site-name"><a href="http://www.raywenderlich.com/" sl-processed="1"><span class="first-name">RAY</span><span class="last-name">WENDERLICH</span></a></h2>
+						<h2 id="site-motto"><a href="http://www.raywenderlich.com/" sl-processed="1">TUTORIALS FOR DEVELOPERS &amp; GAMERS</a></h2>		
+						<h2 id="site-description"><a href="http://www.raywenderlich.com/" border="0" sl-processed="1">Tutorials for iPhone / iOS Developers and Gamers</a></h2>
+					</hgroup>
+					<nav class="navtext">
+						<h1>Site Navigation</h1>
+						<ul id="user-account-navigation" class="logged-in">
+							<li class="login">					<ul id="user-account-navigation" class="logged-out">
+						<li class="login-link"><a href="http://www.raywenderlich.com/login" sl-processed="1">LOGIN</a></li>
+						<li class="separator"></li>
+						<li class="sign-out-link"><a href="http://www.raywenderlich.com/login?section=new-account" sl-processed="1">SIGN UP</a></li>
+					</ul>
+				</li>
+							<script>			
+								jQuery.ajax({
+									type : "POST",
+									data : { "javascript" : "false" },
+									url : "http://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/login_area.php",
+									cache : false,
+								}).done(function(html) {
+									jQuery("#user-account-navigation li").html(html);	
+								})
+							</script>
+						</ul>			    
+						<ul id="sitewide-nagivation">
+							<li class="about"><a href="http://www.raywenderlich.com/write-for-us" style="margin-right: 10px;" sl-processed="1">Write For Us</a></li>
+							<li class="about"><a href="http://www.raywenderlich.com/about" sl-processed="1">About</a></li>
+							<li class="language">
+								<ul id="languagenav">
+			    	    			<li id="language">
+			    	    							    	    			</li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="navigation-band rw_subservice">
+					<div class="wrapper clearfix">
+						<ul id="subnav" class="navtext">
+							<li class="ios-games separator"></li>
+							<li id="all-tutorials"><a class="verbose-link" href="http://www.raywenderlich.com/tutorials" sl-processed="1">Written Tutorials</a><a class="abridged-link" href="http://www.raywenderlich.com/tutorials" sl-processed="1">Written</a></li>
+							<li class="separator"></li>
+							<li id="videos"><a class="verbose-link" href="http://www.raywenderlich.com/video-tutorials" sl-processed="1">Video Tutorials (Beta)</a><a href="http://www.raywenderlich.com/video-tutorials" class="abridged-link" sl-processed="1">Video</a></li>
+							<li class="separator"></li>
+							<li id="podcasts"><a href="http://www.raywenderlich.com/rwpodcast" sl-processed="1">Podcast</a></li>
+							<li class="separator"></li>
+							<li id="ios-gaming"><a href="http://www.raywenderlich.com/forums" sl-processed="1">Forums</a></li>
+							<li class="separator"></li>
+							<li id="art"><a href="http://www.gameartguppy.com/" target="_blank" sl-processed="1">Art</a></li>
+							<li class="separator"></li>
+							<li id="games"><a href="http://www.raywenderlich.com/store" sl-processed="1">Store</a></li>
+							<li class="separator"></li>
+							<li class="search">
+								<form action="http://www.raywenderlich.com/" class="searchform clearfix" method="get">
+									<label class="assistive-text" for="s">Search</label>
+									<input type="text" placeholder="Search for a tutorial" class="s field" name="s" autocomplete="off">
+									<input type="hidden" name="cof" value="FORID:10">
+								</form>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="subnav-band "></div>
+							<!-- .wrapper -->
+			</header>
+		</div>
+		
+		<div class="wrapper clearfix" id="print-header" style="display:none">
+			<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/print-header.png" width="1202" height="102">	
+		</div>
+		<div id="main" class="wrapper clearfix">
+			<div id="container">
+	<div id="primary" class="no-margin-left">
+		<div id="primary-container">
+			<div class="banner-ad" syle="overflow:hidden">
+				<!-- BuySellAds.com Ad Code -->
+				<div id="bsap_1272017" class="bsarocks bsap_39fcef7ed4520883d78f129c33995fd2"></div>
+				<!-- End BuySellAds.com Ad Code -->
+			</div>
+			<div id="content">
+								<article id="post-81952" class="post-81952 post type-post status-publish format-standard has-post-thumbnail hentry category-ios-android category-ipad category-iphone category-uncategorized tag-design tag-inheritance tag-object tag-object-oriented-design tag-oop tag-oriented clearfix">
+					<header class="entry-header">
+						<h2 class="entry-title">
+            				<a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich.html" title="Intro to Object-Oriented Design in Swift: Part 1/2" sl-processed="1">Intro to Object-Oriented Design in Swift: Part 1/2</a>
+            			</h2>
+            			<div class="tutorial-meta" id="larger-screens">
+	            			<div class="author-meta">
+								<a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/375.thumbnail.jpg" alt="Ray Fix" class="user-avatar" width="100" height="100"></a> <a href="http://www.raywenderlich.com/u/rayfix" class="author-name" sl-processed="1">										Ray Fix</a> <span class="author-post-date">on November 28, 2014 </span>
+											            			</div>
+	            			<div class="social-links">
+			    				<ul>
+			    								    							<li class="twitter"><div id="tweetbutton81952m" class="tw_button" style="margin-bottom:10px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe></div></li>
+			    																<li class="facebook"><div class="fb-like fb_iframe_widget" data-href="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fwww.raywenderlich.com%2F81952%2Fintro-object-oriented-design-swift-part-1&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=450"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="fc621af0" width="450px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like(3).html" class="" style="border: none; visibility: visible; width: 76px; height: 20px;"></iframe></span></div></li>
+									<li class="facebook iframe-link"><iframe src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like.html" allowtransparency="true" frameborder="0" scrolling="no" style="width: 74px; height: 20px;"></iframe></li>
+			    				</ul>
+			    			</div>
+	            		</div>
+					</header>
+					<div class="content-wrapper">
+						<div class="wwsgd" style=""><p style="border:thin dotted black; padding:3mm;margin-bottom:10px">If you're new here, you may want to subscribe to my <a href="http://www.raywenderlich.com/feed/" sl-processed="1">RSS feed</a> or follow me on <a href="http://twitter.com/rwenderlich" sl-processed="1">Twitter</a>. Thanks for visiting!</p></div><div id="attachment_55545" style="width: 260px" class="wp-caption alignright"><a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/oop.jpg" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/oop.jpg" alt="Object-oriented design" width="250" height="250" class="size-full wp-image-55545"></a><p class="wp-caption-text">Object-oriented programmers love vehicle hierarchies.</p></div>
+<p><em>Update note:</em> This tutorial was updated for iOS 8 and Swift by Ray Fix. <a href="http://www.raywenderlich.com/?p=45940" title="Intro to Object-Oriented Design 1/2" sl-processed="1">Original post</a> by Tutorial Team member <a href="http://www.raywenderlich.com/u/designatednerd" title="Ellen Shapiro" sl-processed="1">Ellen Shapiro</a>.  It builds for <em>Xcode 6.1.1</em></p>
+<p>A huge piece of the programming puzzle in working with Cocoa, Objective-C and Swift is <em>Object-Oriented Programming</em>. Almost all modern programming languages use this approach, and wrapping your head around its concepts and patterns can be incredibly helpful when reading and writing code.</p>
+<p>Underneath the relation between <code>UITableView</code> and <code>UIScrollView</code> or <code>UIView</code> and <code>UIButton</code> are the fundamental concepts of object-oriented design. By understanding these concepts you’ll have a better grasp on why things are organized the way they are in Cocoa and Cocoa Touch, and you’ll be a more thoughtful programmer when writing your own apps and frameworks.</p>
+<p>In this series you’ll learn more about object-oriented design, including the following concepts:</p>
+<ul>
+<li>The Basics Of Objects</li>
+<li>Inheritance</li>
+<li>Model-View-Controller</li>
+<li>Polymorphism</li>
+<li>Common Object-Oriented Patterns</li>
+</ul>
+<p>This series is designed for developers who are fairly new to programming overall. You likely haven’t worked with other languages extensively, and you’re not quite sure why everything is being done in a particular way. </p>
+<p>This tutorial will cover object-oriented design principles rather than specific syntax, so you should already know the basics of Swift and Xcode before reading on. If you need a refresher on the basics, check out the <a href="http://www.raywenderlich.com/?p=74438" sl-processed="1">Quick Start Tutorial</a>.</p>
+<h2>Getting Started</h2>
+<p>In order to try and understand some of these concepts in a more concrete manner, you’ll build an application called <em>Vehicles</em>. This uses one of the most common metaphors for translating real-world items into virtual objects: the “vehicle”, which could be a bicycle, a car, or really anything with wheels. </p>
+<p>For instance, this is a vehicle:</p>
+<p><a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_56206137_XS.jpg" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_56206137_XS.jpg" alt="Kleinwagen_16" width="424" height="283" class="aligncenter size-full wp-image-54945"></a></p>
+<p>But so is this:</p>
+<p><a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_47228812_XS.jpg" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_47228812_XS.jpg" alt="Motorcycle on a white background" width="424" height="283" class="aligncenter size-large wp-image-54948"></a></p>
+<p>Or this:</p>
+<p><a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_47970160_XS.jpg" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_47970160_XS.jpg" alt="B" width="423" height="284" class="aligncenter size-large wp-image-54946"></a></p>
+<p>Or this:</p>
+<p><a href="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_56277265_XS.jpg" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Fotolia_56277265_XS.jpg" alt="European 18-wheeler with canvas trailer" width="400" height="300" class="aligncenter size-large wp-image-54947"></a></p>
+<p>In this part of the tutorial, you’ll create a data model using basic object-oriented techniques to represent all of these vehicles, and a simple application which implements the data model and displays vehicle data to the user.</p>
+<p>Download <a title="starter project" href="http://cdn3.raywenderlich.com/wp-content/uploads/2014/11/SwiftVehiclesStarter1.zip" sl-processed="1">the starter project</a>, which contains a basic framework for the application you’ll use to learn about Object-Oriented Programming. </p>
+<h2>The Basics Of Objects</h2>
+<p>In object-oriented programming, the basic goal is to break down the characteristics of a “thing” to create an <em>object</em> or <em>objects</em> that describe what that thing <i>is</i> and what that thing <i>does</i>. </p>
+<p>Sometimes, as with vehicles, your “thing” has a real-world equivalent. Sometimes it doesn’t, as with the many different types of <code>UIViewController</code> objects. For the sake of simplicity, you’ll start out by creating objects that have real-world analogs.</p>
+<p>In order to answer the question of what a “thing” is, you have to first determine what its defining characteristics are.</p>
+<p>Other languages will refer to this as a “field”, a “member”, or even just a “variable”. However, in Swift the defining characteristics of an object are shown by its <em>properties</em>. </p>
+<p>Think about the generic concept of a “vehicle” for a moment — something that describes all of the photos above. What common characteristics of a “vehicle” spring to mind?</p>
+<ul>
+<li>It has a number of wheels.</li>
+<li>It has some sort of power source, whether human, gas, electric, or hybrid, which makes it move.</li>
+<li>It has a brand*, like Ford, Chevy, Harley-Davidson, or Schwinn.</li>
+<li>It has a model name like Mustang, Corvette, Sportster, or Fastback.</li>
+<li>It has a year associated with its manufacture.</li>
+</ul>
+<p><i>*- this is sometimes referred to in cars and trucks as a “Make”, but we’ll refer to it as a “brand” across the board for clarity.</i> </p>
+<p>Now that you have the basic characteristics of a vehicle, you can create an Object with these characteristics. </p>
+<p>The file <em>Vehicle.swift</em> defines a class of objects named <code>Vehicle</code>.</p>
+<p>Open <em>Vehicle.swift</em> and add the following code within the <code>class</code> braces:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819521"><td class="code" id="p81952code1"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">var</span> brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #a61390;">var</span> modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #a61390;">var</span> modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">0</span>
+<span style="color: #a61390;">var</span> powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #a61390;">var</span> numberOfWheels <span style="color: #002200;">=</span> <span style="color: #2400d9;">0</span></pre></td></tr></tbody></table></div>
+
+<p>These property declarations describe the characteristics of the object you want to keep track of.  For now you are just providing placeholder values so that the Swift compiler can infer the types as a <code>String</code> or <code>Int</code>.  (Later, in Part 2, you will add a real initializer to get rid of these dummy, placeholder values.  This is why you are not using Swift <em>Optionals</em> to represent them.)</p>
+<h3>Minor Digression: Initialization and Properties</h3>
+<p>One of the important safety features of Swift is how it enables and enforces proper initialization of objects.  This means that it’s virtually impossible to use uninitialized memory. The above properties are called <em>stored properties</em> and must be initialized either by setting them explicitly as you have done, or by initializing them in an <code>init()</code> method.  If you supply all of your stored properties with values, the compiler will won’t require you to explicitly set them in the <code>init()</code> method. </p>
+<h3>Minor Digression: Class versus Struct</h3>
+<p>In Swift, you can define an object-like thing with the keyword <code>class</code> or <code>struct</code>.  In this tutorial, you will be using <code>class</code> to define objects because these allow you to build class hierarchies and override methods.  Structs, while very useful for many things, are more static in nature and don’t allow for this.  For more information on when to use a <code>class</code> versus a <code>struct</code> see <a href="https://developer.apple.com/library/prerelease/mac/documentation/Swift/Conceptual/Swift_Programming_Language/ClassesAndStructures.html" title="Swift Classes and Structures" sl-processed="1">The Swift Programming Language Book</a>. </p>
+<h2>Describing the Object</h2>
+<p>On to the second critical question for every object — what exactly does the object <i>do</i>? </p>
+<p>A programmatic description of what an object does is almost universally called a  <em>method</em>. Think about the common actions of the vehicles in the photos above:</p>
+<ul>
+<li>It can go forward</li>
+<li>It can go backward</li>
+<li>It can stop</li>
+<li>It can turn</li>
+<li>It can change gears</li>
+<li>It can make some sort of noise (e.g. a horn or a bell)</li>
+</ul>
+<p>Most often, you’d be using methods that don’t return anything. However, to make it a little easier to display what’s happening in your app, you’re going to use some methods that return <code>String</code> objects.</p>
+<h3>A Minor Digression: Class Methods vs. Instance Methods</h3>
+<p>You’ve probably noticed when writing code that some methods have the <code>class</code> keyword in front of them. These indicate that a method is a Class method as opposed to a normal Instance method. </p>
+<p>The simplest way to think of the difference is like a schematic blueprint in the physical world: There’s only one blueprint for something, but using that blueprint, you can make many different copies.</p>
+<p>A class method is an action that can be performed with that blueprint, but without creating a specific copy of the object from that blueprint. For example, <code>UIColor</code> has the class method <code>blackColor()</code> that returns a new instance of <code>UIColor</code> set to black.</p>
+<p>An instance method, requires a specific copy of the object created using that blueprint to perform any action. For example, the <code>String</code> instance <code>"Hello There"</code> has an instance method <code>lowercaseString</code> that would return <code>"hello there"</code>. A class method <code>lowercaseString</code> wouldn’t make any sense since that’s just the blueprint for a string –&nbsp;there’s no actual text to lower case!</p>
+<h3>Adding Basic Methods to Your Class</h3>
+<p>Still in <em>Vehicle.swift</em>, add the following methods to your Vehicle class.</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819522"><td class="code" id="p81952code2"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">func</span> goForward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">func</span> goBackward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">func</span> stopMoving<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">func</span> turn<span style="color: #002200;">(</span>degrees<span style="color: #002200;">:</span><span style="color: #a61390;">Int</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">var</span> normalizedDegrees <span style="color: #002200;">=</span> degrees
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">//Since there are only 360 degrees in a circle, calculate what a single turn would be.</span>
+  <span style="color: #a61390;">let</span> degreesInACircle <span style="color: #002200;">=</span> <span style="color: #2400d9;">360</span>
+&nbsp;
+  <span style="color: #a61390;">if</span> <span style="color: #002200;">(</span>normalizedDegrees &gt; degreesInACircle || normalizedDegrees &lt; <span style="color: #002200;">-</span>degreesInACircle<span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+    <span style="color: #11740a; font-style: italic;">// The % operator returns the remainder after dividing.</span>
+    normalizedDegrees <span style="color: #002200;">=</span> normalizedDegrees <span style="color: #002200;">%</span> degreesInACircle
+  <span style="color: #002200;">}</span>
+&nbsp;
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"Turn %d degrees."</span>, normalizedDegrees<span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">func</span> changeGears<span style="color: #002200;">(</span>newGearName<span style="color: #002200;">:</span><span style="color: #a61390;">String</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"Put %@ into %@ gear."</span>,<span style="color: #a61390;">self</span>.modelName, newGearName<span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">func</span> makeNoise<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"null"</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Most of this code is just the skeleton of setting up the methods; you’ll fill in the implementation details later. The <code>turn()</code> and <code>changeGears()</code> methods have some logging output too, which will help you test that your methods are working before you continue any further in the tutorial.</p>
+<p>Open <em>AppDelegate.swift</em>, and replace the implementation of <code>application(_:didFinishLaunchingWithOptions:)</code> with the following:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819523"><td class="code" id="p81952code3"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">func</span> application<span style="color: #002200;">(</span>application<span style="color: #002200;">:</span> <span style="color: #400080;">UIApplication</span>, 
+                 didFinishLaunchingWithOptions launchOptions<span style="color: #002200;">:</span> <span style="color: #002200;">[</span><span style="color: #400080;">NSObject</span><span style="color: #002200;">:</span> <span style="color: #a61390;">AnyObject</span><span style="color: #002200;">]</span>?<span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">Bool</span> <span style="color: #002200;">{</span>
+&nbsp;
+  <span style="color: #a61390;">var</span> vehicle <span style="color: #002200;">=</span> Vehicle<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+  <span style="color: #11740a; font-style: italic;">// Test methods with implementations</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle turn: <span style="color: #2400d9;">\(</span>vehicle.turn(700))"</span><span style="color: #002200;">)</span>
+  <span style="color: #a61390;">var</span> changeGearResult <span style="color: #002200;">=</span> vehicle.changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Test"</span><span style="color: #002200;">)</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle change gears: <span style="color: #2400d9;">\(</span>changeGearResult)"</span><span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Test methods without implementations</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle make noise: <span style="color: #2400d9;">\(</span>vehicle.makeNoise())"</span><span style="color: #002200;">)</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle go forward: <span style="color: #2400d9;">\(</span>vehicle.goForward())"</span><span style="color: #002200;">)</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle go backward: <span style="color: #2400d9;">\(</span>vehicle.goBackward())"</span><span style="color: #002200;">)</span>
+  <span style="color: #a61390;">println</span><span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Vehicle stop moving: <span style="color: #2400d9;">\(</span>vehicle.stopMoving())"</span><span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">true</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Once the vehicle instance is instantiated, you’ll call each of the instance methods and log the output to see what they do.</p>
+<p>Build and run your app; you’ll see that all implemented strings return proper logs with the appropriate items filled in.  Since you have put in placeholder values for most of the properties, you will see this in the debug console: </p>
+<p><a href="http://cdn5.raywenderlich.com/wp-content/uploads/2014/09/Screen-Shot-2014-09-22-at-11.12.21-PM.png" class="hoverZoomLink" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Screen-Shot-2014-09-22-at-11.12.21-PM-700x115.png" alt="Debugger" width="700" height="115" class="aligncenter size-large wp-image-83934 hoverZoomLink"></a></p>
+<p>You’ll be using <em>Inheritance</em> to provide more specific implementations of each of these methods.</p>
+<h2>Inheritance</h2>
+<p>The basic concept of inheritance is similar to that of genetics: children inherit the characteristics of their parents.<br>
+However, it’s a lot more strict than real world genetics in a single-inheritance language like Swift. Rather than having two parents from whom you inherit a mix of characteristics, “child” classes, or <em>subclasses</em>, inherit all the characteristics of their “parent” classes, or <em>superclasses</em>. </p>
+<p>To see inheritance in action, create a subclass of <code>Vehicle</code> called <code>Car</code>. Go to <em>File\New\File…</em> and select <em>iOS\Source\Swift File</em>. Name the file <em>Car</em>.</p>
+<p>Now open <em>Car.swift</em> and add the following class definition for Car:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819524"><td class="code" id="p81952code4"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">class</span> Car <span style="color: #002200;">:</span> Vehicle <span style="color: #002200;">{</span> 
+  <span style="color: #a61390;">override</span> <span style="color: #a61390;">init</span><span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+    <span style="color: #a61390;">super</span>.<span style="color: #a61390;">init</span><span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+    numberOfWheels <span style="color: #002200;">=</span> <span style="color: #2400d9;">4</span>
+  <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p><code>Car</code> derives from your <code>Vehicle</code> class and inherits all of its methods and properties. Note that it makes perfect sense to say, “A <code>Car</code> is-a <code>Vehicle</code>“. If you can naturally say, “Subclass is-a Superclass”, derivation usually makes sense.</p>
+<p>Since you provided values for all of the properties in the superclass, there’s no need to explicitly set each in your subclass. You may only want to set certain properties and leave the others as their defaults.  For <code>Car</code>s, we know that the <code>numberOfWheels</code> will be four.  To express this you <code>override</code> the initializer, call the superclass initializer, and then customize the <code>numberOfWheels</code> property to four.  The order is significant.  If you called <code>super.init()</code> last, <code>numberOfWheels</code> would get reset back to 0.  Fortunately, the Swift complier will not allow you to make this mistake.</p>
+<p>But what if you need more information to describe the car? Cars have more specific characteristics than just the number of wheels How many doors does it have? Is it a hatchback or does it have a normal trunk? Is it a convertible? Does it have a sunroof? </p>
+<p>Well, you can easily add those new properties! In <em>Car.swift</em>, above your initializer, add:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819525"><td class="code" id="p81952code5"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">var</span> isConvertible<span style="color: #002200;">:</span><span style="color: #a61390;">Bool</span> <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+<span style="color: #a61390;">var</span> isHatchback<span style="color: #002200;">:</span><span style="color: #a61390;">Bool</span> <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+<span style="color: #a61390;">var</span> hasSunroof<span style="color: #002200;">:</span><span style="color: #a61390;">Bool</span> <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+<span style="color: #a61390;">var</span> numberOfDoors<span style="color: #002200;">:</span><span style="color: #a61390;">Int</span> <span style="color: #002200;">=</span> <span style="color: #2400d9;">0</span></pre></td></tr></tbody></table></div>
+
+<p>Now, any <em>Car</em> object can be customized with all properties from the <em>Vehicle</em> and <em>Car</em> classes.</p>
+<h3>Overriding Methods</h3>
+<p>Now that you’ve added the appropriate additional properties, you can <em>override</em> several methods from the superclass to provide full implementations of those methods. </p>
+<p>Overriding a method means “taking a method declared in the superclass and creating your own implementation.”   For example, when you add a new <em>UIViewController</em> object, it already comes with overridden methods for <code>viewDidLoad</code> and others.  In Swift, when you override a method, you must use the <code>override</code> keyword.  This communicates your intent to the compiler.  If you accidentally misspell a method parameter, for example, the compiler can let you know that something is wrong.  Also, if you didn’t know you were overriding a method, the compiler will also let you know.</p>
+<p>Unlike an initializer method, when you override a normal method, you can do one of two things:</p>
+<ol>
+<li>Include a call to the <code>super.method()</code> to take advantage of everything happening higher up the inheritance chain, or</li>
+<li>Provide your own implementation from scratch.</li>
+</ol>
+<p>In all of the <em>UIViewController</em> methods, you can tell that Apple wants you to call the <code>[super method]</code> – there’s some important stuff in there that needs to execute before your <em>UIViewController</em> subclass can do its work. </p>
+<p>However, since most of the methods you’re going to override in the <em>Car</em> class are returning empty values, you can just create your own implementations. There’s nothing useful in the superclass’s implementation so there’s no need to call it.</p>
+<p>Still in <em>Car.swift</em> add the following private helper method to simplify your superclass override:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819526"><td class="code" id="p81952code6"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Private method implementations</span>
+private <span style="color: #a61390;">func</span> start<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"Start power source %@."</span>, powerSource<span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Some vehicles such as bicycles don’t need to be started, but cars do! Here you use the access control keyword <code>private</code> to express the fact that this method should not be used outside of this file.</p>
+<div class="note"><em>Note:</em> Although this tutorial does not cover access control in detail, using it is pretty simple.  If you do not add any access control keywords, the class, method or property defaults to <code>internal</code> and can be used by any code in the same module.  If you use <code>private</code>, access is limited to the file.  If you use <code>public</code>, you can access from anywhere, including outside the module.  This is useful if you are building a framework, to be used by other projects, for example.
+</div>
+<p>Next, add the remaining superclass overrides:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819527"><td class="code" id="p81952code7"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Superclass Overrides</span>
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goForward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"%@ %@ Then depress gas pedal."</span>, start<span style="color: #002200;">(</span><span style="color: #002200;">)</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Forward"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goBackward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"%@ %@ Check your rear view mirror. Then depress gas pedal."</span>, start<span style="color: #002200;">(</span><span style="color: #002200;">)</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Reverse"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> stopMoving<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"Depress brake pedal. %@"</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Park"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> makeNoise<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"Beep beep!"</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Now that you have a concrete, or fully implemented, subclass of Vehicle, you can start building out your Table View controller. </p>
+<h2>Building out the User Interface</h2>
+<p>Open <em>VehicleListTableViewController.swift</em> and add the following method just after <code>viewDidLoad</code>:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819528"><td class="code" id="p81952code8"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Data setup</span>
+<span style="color: #a61390;">func</span> setupVehicleArray<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">// Clear the array. (Start from scratch.)</span>
+  vehicles.removeAll<span style="color: #002200;">(</span>keepCapacity<span style="color: #002200;">:</span> <span style="color: #a61390;">true</span><span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Create a car.</span>
+  <span style="color: #a61390;">var</span> mustang <span style="color: #002200;">=</span> Car<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+  mustang.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Ford"</span>
+  mustang.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Mustang"</span>
+  mustang.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">1968</span>
+  mustang.isConvertible <span style="color: #002200;">=</span> <span style="color: #a61390;">true</span>
+  mustang.isHatchback <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+  mustang.hasSunroof <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+  mustang.numberOfDoors <span style="color: #002200;">=</span> <span style="color: #2400d9;">2</span>
+  mustang.powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"gas engine"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Add it to the array</span>
+  vehicles.append<span style="color: #002200;">(</span>mustang<span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Create another car.</span>
+  <span style="color: #a61390;">var</span> outback <span style="color: #002200;">=</span> Car<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+  outback.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Subaru"</span>
+  outback.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Outback"</span>
+  outback.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">1999</span>
+  outback.isConvertible <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+  outback.isHatchback <span style="color: #002200;">=</span> <span style="color: #a61390;">true</span>
+  outback.hasSunroof <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+  outback.numberOfDoors <span style="color: #002200;">=</span> <span style="color: #2400d9;">5</span>
+  outback.powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"gas engine"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Add it to the array.</span>
+  vehicles.append<span style="color: #002200;">(</span>outback<span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Create another car</span>
+  <span style="color: #a61390;">var</span> prius <span style="color: #002200;">=</span> Car<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+  prius.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Toyota"</span>
+  prius.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Prius"</span>
+  prius.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">2002</span>
+  prius.hasSunroof <span style="color: #002200;">=</span> <span style="color: #a61390;">true</span>
+  prius.isConvertible <span style="color: #002200;">=</span> <span style="color: #a61390;">false</span>
+  prius.isHatchback <span style="color: #002200;">=</span> <span style="color: #a61390;">true</span>
+  prius.numberOfDoors <span style="color: #002200;">=</span> <span style="color: #2400d9;">4</span>
+  prius.powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"hybrid engine"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Add it to the array.</span>
+  vehicles.append<span style="color: #002200;">(</span>prius<span style="color: #002200;">)</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Sort the array by the model year</span>
+  vehicles.<span style="color: #a61390;">sort</span> <span style="color: #002200;">{</span> $<span style="color: #2400d9;">0</span>.modelYear &lt; $<span style="color: #2400d9;">1</span>.modelYear <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>This simply adds a data setup method to construct your vehicle array. Each <em>Car</em> is created and customized based on the values set on its properties.</p>
+<p>In <code>viewDidLoad()</code> add the following after its <code>super.viewDidLoad()</code>:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p819529"><td class="code" id="p81952code9"><pre class="swift" style="font-family:monospace;">setupVehicleArray<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+title <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Vehicles"</span></pre></td></tr></tbody></table></div>
+
+<p>The above method executes just after your view loads from the Storyboard. It calls the <em>setupVehicleArray()</em> method you just created, and sets the title of the <em>VehicleListTableViewController</em> to reflect its contents.</p>
+<p>Build and run your application; you’ll see something like the following:<br>
+<a href="http://cdn5.raywenderlich.com/wp-content/uploads/2014/09/Build.png" class="hoverZoomLink" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Build-281x500.png" alt="Car Build" width="213" height="320" class="aligncenter size-medium wp-image-83985 hoverZoomLink"></a></p>
+<p>Your table view is populated with three entries of “Vehicle.Car”.  Vehicle is the name of the module (app, in this case) and Car is the name of the class.</p>
+<p>The good news is that these objects are being recognized as <em>Car</em> objects. The bad news is that what’s being displayed isn’t terribly useful. Take a look at what’s set up in the <code>UITableViewDataSource</code> method <code>tableView(_:cellForRowAtIndexPath:)</code>:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195210"><td class="code" id="p81952code10"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> tableView<span style="color: #002200;">(</span>tableView<span style="color: #002200;">:</span> <span style="color: #400080;">UITableView</span>, cellForRowAtIndexPath indexPath<span style="color: #002200;">:</span> <span style="color: #400080;">NSIndexPath</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #400080;">UITableViewCell</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">let</span> cell <span style="color: #002200;">=</span> tableView.dequeueReusableCellWithIdentifier<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Cell"</span>, forIndexPath<span style="color: #002200;">:</span> indexPath<span style="color: #002200;">)</span> <span style="color: #a61390;">as</span> <span style="color: #400080;">UITableViewCell</span>
+&nbsp;
+  <span style="color: #a61390;">let</span> vehicle <span style="color: #002200;">=</span> vehicles<span style="color: #002200;">[</span>indexPath.row<span style="color: #002200;">]</span> <span style="color: #a61390;">as</span> Vehicle
+  cell.textLabel?.text <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"<span style="color: #2400d9;">\(</span>vehicle)"</span>
+  <span style="color: #a61390;">return</span> cell
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Here, you’re grabbing a <em>UITableViewCell</em> object then getting the <em>Vehicle</em> at the index in the <code>self.vehicles</code> array matching the <code>row</code> of the cell you’re constructing. Next, you set that specific <em>Vehicle</em>’s string representation as the text for the cell’s <code>textLabel</code>. </p>
+<p>The default string produced method isn’t very human-friendly. You’ll want to define a method in <em>Vehicle</em> that describes what each <code>Vehicle</code> object represents in a way that is easy for your users to understand. </p>
+<p>Go to <em>Vehicle.swift</em> and add the following property below your other properties:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195211"><td class="code" id="p81952code11"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Computed  Properties</span>
+&nbsp;
+<span style="color: #a61390;">var</span> vehicleTitle<span style="color: #002200;">:</span> <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span><span style="color: #bf1d1a;">"%d %@ %@"</span>, modelYear, brandName, modelName<span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Until now, you have been using <em>stored properties</em> to keep track of attributes associated with your objects.  This is an example of a <em>computed property</em>. This is a read-only property that isn’t backed by a variable; instead, it runs the code inside braces and generates a fresh string every time.</p>
+<p>Go back to <em>VehicleListTableViewController.swift</em> and update <code>tableView(_:cellForRowAtIndexPath:)</code> to use this new property on <code>Vehicle</code> as follows:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195212"><td class="code" id="p81952code12"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> tableView<span style="color: #002200;">(</span>tableView<span style="color: #002200;">:</span> <span style="color: #400080;">UITableView</span>, cellForRowAtIndexPath indexPath<span style="color: #002200;">:</span> <span style="color: #400080;">NSIndexPath</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #400080;">UITableViewCell</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">let</span> cell <span style="color: #002200;">=</span> tableView.dequeueReusableCellWithIdentifier<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Cell"</span>, forIndexPath<span style="color: #002200;">:</span> indexPath<span style="color: #002200;">)</span> <span style="color: #a61390;">as</span> <span style="color: #400080;">UITableViewCell</span>
+&nbsp;
+  <span style="color: #a61390;">let</span> vehicle <span style="color: #002200;">=</span> vehicles<span style="color: #002200;">[</span>indexPath.row<span style="color: #002200;">]</span> <span style="color: #a61390;">as</span> Vehicle
+  cell.textLabel?.text <span style="color: #002200;">=</span> vehicle.vehicleTitle
+  <span style="color: #a61390;">return</span> cell
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Build and run your application; it should look a little nicer now: </p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-jul-8-2013-10-14-08-pm" rel="attachment wp-att-50446" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Jul-8-2013-10.14.08-PM-213x320.png" alt="Three Vehicles With Readable Titles" width="213" height="320" class="aligncenter size-medium wp-image-50446 hoverZoomLink"></a></p>
+<p>However, if you select a <code>Vehicle</code> from the list, all you’ll see are the same elements visible in the storyboard, with none of the details from the <code>Vehicle</code> you selected: </p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-sep-8-2013-5-21-51-pm" rel="attachment wp-att-50449" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Sep-8-2013-5.21.51-PM-213x320.png" alt="Before Data Hookup Detail" width="213" height="320" class="aligncenter size-medium wp-image-50449 hoverZoomLink"></a></p>
+<p>What’s up with that?</p>
+<p>Open <em>VehicleDetailViewController.swift</em>; you’ll see that while the UI was constructed in the Storyboard and all the <code>@IBOutlets</code> are already hooked up to save you some time fighting with AutoLayout, none of the data is hooked up.</p>
+<h3>Hooking Your Data to Your View</h3>
+<p>To hook up the data, go to <em>VehicleDetailViewController.swift</em> and fill in the method <code>configureView()</code> to take advantage of the vehicle set by the segue as follows:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195213"><td class="code" id="p81952code13"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">func</span> configureView<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">// Update the user interface for the detail item.</span>
+  <span style="color: #a61390;">if</span> <span style="color: #a61390;">let</span> vehicle <span style="color: #002200;">=</span> detailVehicle <span style="color: #002200;">{</span>
+    title <span style="color: #002200;">=</span> vehicle.vehicleTitle
+&nbsp;
+    <span style="color: #a61390;">var</span> basicDetails <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Basic vehicle details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+    basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Brand name: <span style="color: #2400d9;">\(</span>vehicle.brandName)<span style="color: #2400d9;">\n</span>"</span>
+    basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Model name: <span style="color: #2400d9;">\(</span>vehicle.modelName)<span style="color: #2400d9;">\n</span>"</span>
+    basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Model year: <span style="color: #2400d9;">\(</span>vehicle.modelYear)<span style="color: #2400d9;">\n</span>"</span>
+    basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Power source: <span style="color: #2400d9;">\(</span>vehicle.powerSource)<span style="color: #2400d9;">\n</span>"</span>
+    basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"# of wheels: <span style="color: #2400d9;">\(</span>vehicle.numberOfWheels)<span style="color: #2400d9;">\n</span>"</span>
+&nbsp;
+    detailDescriptionLabel?.text <span style="color: #002200;">=</span> basicDetails
+  <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Build and run your application; select a vehicle from the table view and you’ll see that the detail view is now showing the correct title and details, as so: </p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-sep-8-2013-5-35-38-pm" rel="attachment wp-att-50454" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Sep-8-2013-5.35.38-PM-213x320.png" alt="Basic vehicle details" width="213" height="320" class="aligncenter size-medium wp-image-50454 hoverZoomLink"></a></p>
+<h3>Model-View-Controller Encapsulation of Logic</h3>
+<p>iOS and many other modern programming languages have a design pattern known as <em>Model-View-Controller</em> , or MVC for short.</p>
+<p>The idea behind MVC is that views should only care about how they are presented, models should only care about their data, and controllers should work to marry the two without necessarily knowing too much about their internal structure. </p>
+<p>The biggest benefit to the MVC pattern is making sure that if your data model changes, you only have to make changes once.</p>
+<p>One of the biggest rookie mistakes that programmers make is putting far too much of the logic in their <code>UIViewController</code> classes. This ties views and <code>UIViewControllers</code> too closely to one particular type of model, making it harder to reuse views to display different kinds of details. </p>
+<p>Why would you want to do implement the MVC pattern in your app? Well, imagine that you wanted to add more specific details about a car to <code>VehicleDetailViewController</code>. You could start by going back into <code>configureView()</code> and adding some information specifically about the car, as so:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195214"><td class="code" id="p81952code14"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// Car-specific details</span>
+basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>Car-Specific Details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+basicDetails <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Number of doors: <span style="color: #2400d9;">\(</span>vehicle.numberOfDoors)"</span>  <span style="color: #11740a; font-style: italic;">// ERROR</span></pre></td></tr></tbody></table></div>
+
+<p>But you’ll notice that this does not work because the compiler doesn’t know what the property <code>numberOfDoors</code> is. That property is associated with the <code>Car</code> subclass and not part of the <code>Vehicle</code> base class.</p>
+<p>There are a couple of ways you can fix this. </p>
+<p>One way is to have the view controller attempt to <em>downcast</em> the <code>vehicle</code> to a <code>Car</code> type using the <code>as? Car</code> operation.  If it succeeds, access the <code>Car</code> properties and display them.</p>
+<p>Any time you catch yourself downcasting, ask yourself: “is my view controller trying to do too much?” </p>
+<p>In this case, the answer is yes. You can take advantage of inheritance to use the same method to supply the string to be displayed for the appropriate details for each subclass.  This way the view controllers doesn’t need to concern itself with the details of specific subclasses. </p>
+<h3>Creating Subclasses via Inheritance</h3>
+<p>First, go to <em>Vehicle.swift</em> and add a new computed property to get a details string:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195215"><td class="code" id="p81952code15"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">var</span> vehicleDetails<span style="color: #002200;">:</span><span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">var</span> details <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Basic vehicle details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+  details <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Brand name: <span style="color: #2400d9;">\(</span>brandName)<span style="color: #2400d9;">\n</span>"</span>
+  details <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Model name: <span style="color: #2400d9;">\(</span>modelName)<span style="color: #2400d9;">\n</span>"</span>
+  details <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Model year: <span style="color: #2400d9;">\(</span>modelYear)<span style="color: #2400d9;">\n</span>"</span>
+  details <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Power source: <span style="color: #2400d9;">\(</span>powerSource)<span style="color: #2400d9;">\n</span>"</span>
+  details <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"# of wheels: <span style="color: #2400d9;">\(</span>numberOfWheels)<span style="color: #2400d9;">\n</span>"</span>
+  <span style="color: #a61390;">return</span> details
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>The method is similar to what you added to <em>VehicleDetailViewController.swift</em>, except it returns the generated string rather than display it somewhere directly.</p>
+<p>Now, you can use inheritance to take this basic vehicle string and add the specific details for the <code>Car</code> class. Open <em>Car.swift</em> and add the override the property <code>vehicleDetails</code>:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195216"><td class="code" id="p81952code16"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">var</span> vehicleDetails<span style="color: #002200;">:</span><span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">// Get basic details from superclass</span>
+  <span style="color: #a61390;">let</span> basicDetails <span style="color: #002200;">=</span> <span style="color: #a61390;">super</span>.vehicleDetails
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Initialize mutable string</span>
+  <span style="color: #a61390;">var</span> carDetailsBuilder <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>Car-Specific Details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// String helpers for booleans</span>
+  <span style="color: #a61390;">let</span> yes <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Yes<span style="color: #2400d9;">\n</span>"</span>
+  <span style="color: #a61390;">let</span> no <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"No<span style="color: #2400d9;">\n</span>"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Add info about car-specific features.</span>
+  carDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Has sunroof: "</span>
+  carDetailsBuilder <span style="color: #002200;">+=</span> hasSunroof ? yes <span style="color: #002200;">:</span> no
+&nbsp;
+  carDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Is Hatchback: "</span>
+  carDetailsBuilder <span style="color: #002200;">+=</span> isHatchback ? yes <span style="color: #002200;">:</span> no
+&nbsp;
+  carDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Is Convertible: "</span>
+  carDetailsBuilder <span style="color: #002200;">+=</span> isConvertible ? yes <span style="color: #002200;">:</span> no
+&nbsp;
+  carDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Number of doors: <span style="color: #2400d9;">\(</span>numberOfDoors)"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Create the final string by combining basic and car-specific details.</span>
+  <span style="color: #a61390;">let</span> carDetails <span style="color: #002200;">=</span> basicDetails <span style="color: #002200;">+</span> carDetailsBuilder
+&nbsp;
+  <span style="color: #a61390;">return</span> carDetails
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p><code>Car</code>’s version of the method starts by calling the superclass’s implementation to get the vehicle details. It then builds the car-specific details string into <code>carDetailsBuilder</code> and then combines the two at the very end.</p>
+<p>Now go back to <em>VehicleDetailViewController.swift</em> and replace <code>configureView()</code> with the much simpler implementation below to display this string that you’ve created:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195217"><td class="code" id="p81952code17"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">func</span> configureView<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">// Update the user interface for the detail item.</span>
+  <span style="color: #a61390;">if</span> <span style="color: #a61390;">let</span> vehicle <span style="color: #002200;">=</span> detailVehicle <span style="color: #002200;">{</span>
+    title <span style="color: #002200;">=</span> vehicle.vehicleTitle
+    detailDescriptionLabel?.text <span style="color: #002200;">=</span> vehicle.vehicleDetails
+  <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Build and run your application; select one of the cars, and you should now be able to see both general details and car-specific details as shown below: </p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-aug-28-2013-8-43-53-pm" rel="attachment wp-att-50457" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Aug-28-2013-8.43.53-PM-213x320.png" alt="Basic and car-specific details" width="213" height="320" class="aligncenter size-medium wp-image-50457 hoverZoomLink"></a></p>
+<p>Your <code>VehicleDetailViewController</code> class now allows the <code>Vehicle</code> and <code>Car</code> classes to determine the data to be displayed. The only thing <code>VehicleDetailsViewController</code> is doing is connecting that information up with the view!</p>
+<p>The real power in this is evident when you create further subclasses of <em>Vehicle</em>. Start with a fairly simple one for a motorcycle. </p>
+<p>Go to File\New\File… and select iOS\Source\Swift File. Name the file <em>Motorcycle</em>. Inside <em>Motorcycle.swift</em>, create a new subclass of <code>Vehicle</code> called <code>Motorcycle</code> as shown below:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195218"><td class="code" id="p81952code18"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">class</span> Motorcycle <span style="color: #002200;">:</span> Vehicle <span style="color: #002200;">{</span>
+&nbsp;
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Since motorcycles can have either a deep booming engine noise, or a high-pitched whine of an engine noise, each <code>Motorcycle</code> object you create should specify which type of noise it makes. Add the following property and method to your new class:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195219"><td class="code" id="p81952code19"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">var</span> engineNoise <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">""</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">init</span><span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">super</span>.<span style="color: #a61390;">init</span><span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+  numberOfWheels <span style="color: #002200;">=</span> <span style="color: #2400d9;">2</span>
+  powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"gas engine"</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Since all motorcycles have two wheels and are gas-powered (for the sake of this example, anything that’s electric-powered would be considered a scooter, not a motorcycle), you can set up the number of wheels and power source when the object is instantiated.</p>
+<p>Next, add the following methods to override the superclass methods.</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195220"><td class="code" id="p81952code20"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Superclass Overrides</span>
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goForward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"%@ Open throttle."</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Forward"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goBackward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span> <span style="color: #bf1d1a;">"%@ Walk %@ backwards using feet."</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Neutral"</span><span style="color: #002200;">)</span>, modelName<span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> stopMoving<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"Squeeze brakes"</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> makeNoise<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">self</span>.engineNoise
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Finally, override the <code>vehicleDetails</code> property in order to add the <code>Motorcycle</code>-specific details to the <code>vehicleDetails</code> as shown below:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195221"><td class="code" id="p81952code21"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">var</span> vehicleDetails<span style="color: #002200;">:</span><span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">//Get basic details from superclass</span>
+  <span style="color: #a61390;">let</span> basicDetails <span style="color: #002200;">=</span> <span style="color: #a61390;">super</span>.vehicleDetails
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">//Initialize mutable string</span>
+  <span style="color: #a61390;">var</span> motorcycleDetailsBuilder <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>Motorcycle-Specific Details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">//Add info about motorcycle-specific features.</span>
+  motorcycleDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Engine Noise: <span style="color: #2400d9;">\(</span>engineNoise)"</span>
+&nbsp;
+  <span style="color: #a61390;">let</span> motorcycleDetails <span style="color: #002200;">=</span> basicDetails <span style="color: #002200;">+</span> motorcycleDetailsBuilder
+&nbsp;
+  <span style="color: #a61390;">return</span> motorcycleDetails
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Now, it’s time to create some instances of <code>Motorcycle</code>. </p>
+<p>Open <em>VehicleListTableViewController.swift</em>, find <code>setupVehicleArray()</code> and add the following code below the <em>Cars</em> you’ve already added but above where you sort the array:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195222"><td class="code" id="p81952code22"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// Create a motorcycle</span>
+<span style="color: #a61390;">var</span> harley <span style="color: #002200;">=</span> Motorcycle<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+harley.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Harley-Davidson"</span>
+harley.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Softail"</span>
+harley.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">1979</span>
+harley.engineNoise <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Vrrrrrrrroooooooooom!"</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Add it to the array.</span>
+vehicles.append<span style="color: #002200;">(</span>harley<span style="color: #002200;">)</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Create another motorcycle</span>
+<span style="color: #a61390;">var</span> kawasaki <span style="color: #002200;">=</span> Motorcycle<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+kawasaki.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Kawasaki"</span>
+kawasaki.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Ninja"</span>
+kawasaki.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">2005</span>
+kawasaki.engineNoise <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Neeeeeeeeeeeeeeeeow!"</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Add it to the array</span>
+<span style="color: #a61390;">self</span>.vehicles.append<span style="color: #002200;">(</span>kawasaki<span style="color: #002200;">)</span></pre></td></tr></tbody></table></div>
+
+<p>The above code simply instantiates two Motorcycle objects and adds them to the vehicles array.</p>
+<p>Build and run your application; you’ll see the two <code>Motorcycle</code> objects you added in the list:</p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-aug-28-2013-9-05-00-pm" rel="attachment wp-att-50465" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Aug-28-2013-9.05.00-PM-213x320.png" alt="Added Motorcycles" width="213" height="320" class="aligncenter size-medium wp-image-50465 hoverZoomLink"></a></p>
+<p>Tap on one of them, and you’ll be taken to the details for that <code>Motorcycle</code>, as shown below:</p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-aug-28-2013-9-05-04-pm" rel="attachment wp-att-50467" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Aug-28-2013-9.05.04-PM-213x320.png" alt="Motorcycle Details" width="213" height="320" class="aligncenter size-medium wp-image-50467 hoverZoomLink"></a></p>
+<p>Whether it’s a car or a motorcycle (or even a plain old vehicle), you can call <code>vehicleDetails</code> and get the relevant details.</p>
+<p>By using proper separation between the model, the view, and the view controller and inheritance, you’re now able to display data for several subclasses of the same superclass without having to write tons of extra code to handle different subclass types. Less code written == happier developers! :]</p>
+<h3>Housing Logic in the Model Class</h3>
+<p>You can also use this approach to keep some of the more complicated logic encapsulated within the model class. Think about a <code>Truck</code> object: many different types of vehicles are referred to as a “truck”, ranging from pickup trucks to tractor-trailers. Your truck class will have a little bit of logic to change the truck’s behavior based on the number of cubic feet of cargo it can haul.</p>
+<p>Go to File\New\File… and select iOS\Source\Swift File. Name the file <em>Truck</em>. Inside <em>Truck.swift</em>, create a new subclass of <code>Vehicle</code> called <code>Truck</code> as you did for <em>Car</em> and <em>Motorcycle</em>:</p>
+<p>Add the following integer property to <em>Truck.swift</em> to hold the truck’s capacity data:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195223"><td class="code" id="p81952code23"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">class</span> Truck <span style="color: #002200;">:</span> Vehicle <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">var</span> cargoCapacityCubicFeet<span style="color: #002200;">:</span> <span style="color: #a61390;">Int</span> <span style="color: #002200;">=</span> <span style="color: #2400d9;">0</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Since there are so many different types of trucks, you don’t need to create an initializer method that provides any of those details automatically. You can simply override the superclass methods which would be the same no matter the size of the truck.</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195224"><td class="code" id="p81952code24"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">//MARK: - Superclass overrides</span>
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goForward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span><span style="color: #bf1d1a;">"%@ Depress gas pedal."</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Drive"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span>
+&nbsp;
+<span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> stopMoving<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span><span style="color: #bf1d1a;">"Depress brake pedal. %@"</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Park"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Next, you’ll want to override a couple of methods so that the string returned is dependent on the amount of cargo the truck can haul. A big truck needs to sound a backup alarm, so you can create a private method.</p>
+<p>Add the following private method code to your <code>Truck</code> class:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195225"><td class="code" id="p81952code25"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// MARK: - Private methods</span>
+private <span style="color: #a61390;">func</span> soundBackupAlarm<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"Beep! Beep! Beep! Beep!"</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Then back in the superclass overrides section, you can use that <code>soundBackupAlarm()</code> method to create a <code>goBackward()</code> method that sounds the alarm for big trucks:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195226"><td class="code" id="p81952code26"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">func</span> goBackward<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">if</span> cargoCapacityCubicFeet &gt; <span style="color: #2400d9;">100</span> <span style="color: #002200;">{</span>
+    <span style="color: #11740a; font-style: italic;">// Sound a backup alarm first</span>
+    <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span><span style="color: #bf1d1a;">"Wait for <span style="color: #2400d9;">\"</span>%@<span style="color: #2400d9;">\"</span>, then %@"</span>, soundBackupAlarm<span style="color: #002200;">(</span><span style="color: #002200;">)</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Reverse"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+  <span style="color: #002200;">}</span> <span style="color: #a61390;">else</span> <span style="color: #002200;">{</span>
+    <span style="color: #a61390;">return</span> <span style="color: #a61390;">String</span><span style="color: #002200;">(</span>format<span style="color: #002200;">:</span><span style="color: #bf1d1a;">"%@ Depress gas pedal."</span>, changeGears<span style="color: #002200;">(</span><span style="color: #bf1d1a;">"Reverse"</span><span style="color: #002200;">)</span><span style="color: #002200;">)</span>
+  <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Trucks also have very different horns; a pickup truck, for instance, would have a horn similar to that of a car, while progressively larger trucks have progressively louder horns. You can handle this with a switch statement in the <code>makeNoise()</code> method.</p>
+<p>Add <em>makeNoise()</em> as follows:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195227"><td class="code" id="p81952code27"><pre class="objc" style="font-family:monospace;">override func makeNoise<span style="color: #002200;">(</span><span style="color: #002200;">)</span> <span style="color: #002200;">-</span>&gt; String <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">switch</span> numberOfWheels <span style="color: #002200;">{</span>
+  <span style="color: #a61390;">case</span> Int.min...4<span style="color: #002200;">:</span>
+    <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"Beep beep!"</span>
+  <span style="color: #a61390;">case</span> <span style="color: #2400d9;">5</span>...8<span style="color: #002200;">:</span>
+    <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"Honk!"</span>
+  <span style="color: #a61390;">default</span><span style="color: #002200;">:</span>
+    <span style="color: #a61390;">return</span> <span style="color: #bf1d1a;">"HOOOOOOOOONK!"</span>
+  <span style="color: #002200;">}</span>
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Finally, you can override the <code>vehicleDetails</code> property in order to get the appropriate details for your <code>Truck</code> object. Add the method as follows:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195228"><td class="code" id="p81952code28"><pre class="swift" style="font-family:monospace;"><span style="color: #a61390;">override</span> <span style="color: #a61390;">var</span> vehicleDetails<span style="color: #002200;">:</span> <span style="color: #a61390;">String</span> <span style="color: #002200;">{</span>
+  <span style="color: #11740a; font-style: italic;">// Get basic details from superclass</span>
+  <span style="color: #a61390;">let</span> basicDetails <span style="color: #002200;">=</span> <span style="color: #a61390;">super</span>.vehicleDetails
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Initialize mutable string</span>
+  <span style="color: #a61390;">var</span> truckDetailsBuilder <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>Truck-Specific Details:<span style="color: #2400d9;">\n</span><span style="color: #2400d9;">\n</span>"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Add info about truck-specific features.</span>
+  truckDetailsBuilder <span style="color: #002200;">+=</span> <span style="color: #bf1d1a;">"Cargo Capacity: <span style="color: #2400d9;">\(</span>cargoCapacityCubicFeet) cubic feet"</span>
+&nbsp;
+  <span style="color: #11740a; font-style: italic;">// Create the final string by combining basic and truck-specific details.</span>
+  <span style="color: #a61390;">let</span> truckDetails <span style="color: #002200;">=</span> basicDetails <span style="color: #002200;">+</span> truckDetailsBuilder
+&nbsp;
+  <span style="color: #a61390;">return</span> truckDetails
+<span style="color: #002200;">}</span></pre></td></tr></tbody></table></div>
+
+<p>Now that you’ve got your <code>Truck</code> object set up, you can create a few instances of it. Head back to <em>VehicleListTableViewController.swift</em>, find the <code>setupVehicleArray()</code> method and add the following code right above where you sort the array:</p>
+
+<div class="wp_codebox"><table><tbody><tr id="p8195229"><td class="code" id="p81952code29"><pre class="swift" style="font-family:monospace;"><span style="color: #11740a; font-style: italic;">// Create a truck</span>
+<span style="color: #a61390;">var</span> silverado <span style="color: #002200;">=</span> Truck<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+silverado.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Chevrolet"</span>
+silverado.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Silverado"</span>
+silverado.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">2011</span>
+silverado.numberOfWheels <span style="color: #002200;">=</span> <span style="color: #2400d9;">4</span>
+silverado.cargoCapacityCubicFeet <span style="color: #002200;">=</span> <span style="color: #2400d9;">53</span>
+silverado.powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"gas engine"</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Add it to the array</span>
+vehicles.append<span style="color: #002200;">(</span>silverado<span style="color: #002200;">)</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Create another truck</span>
+<span style="color: #a61390;">var</span> eighteenWheeler <span style="color: #002200;">=</span> Truck<span style="color: #002200;">(</span><span style="color: #002200;">)</span>
+eighteenWheeler.brandName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"Peterbilt"</span>
+eighteenWheeler.modelName <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"579"</span>
+eighteenWheeler.modelYear <span style="color: #002200;">=</span> <span style="color: #2400d9;">2013</span>
+eighteenWheeler.numberOfWheels <span style="color: #002200;">=</span> <span style="color: #2400d9;">18</span>
+eighteenWheeler.cargoCapacityCubicFeet <span style="color: #002200;">=</span> <span style="color: #2400d9;">408</span>
+eighteenWheeler.powerSource <span style="color: #002200;">=</span> <span style="color: #bf1d1a;">"diesel engine"</span>
+&nbsp;
+<span style="color: #11740a; font-style: italic;">// Add it to the array</span>
+vehicles.append<span style="color: #002200;">(</span>eighteenWheeler<span style="color: #002200;">)</span></pre></td></tr></tbody></table></div>
+
+<p>This will create a couple of <code>Truck</code> objects with the truck-specific properties to join the cars and motorcycles in the array.</p>
+<p>Build and run you application; select one of the <code>Trucks</code> to verify that you can now see the appropriate <code>Truck</code>-specific details, as demonstrated below: </p>
+<p><a href="http://www.raywenderlich.com/45940/intro-object-oriented-design-part-1/ios-simulator-screen-shot-sep-4-2013-1-54-57-pm" rel="attachment wp-att-50468" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/iOS-Simulator-Screen-shot-Sep-4-2013-1.54.57-PM-213x320.png" alt="Truck-specific Details" width="213" height="320" class="aligncenter size-medium wp-image-50468 hoverZoomLink"></a></p>
+<p>That looks pretty great! The truck details are coming through thanks to the <code>vehicleDetails</code> computed property, inheritance, and overridden implementations.</p>
+<h2>Where To Go From Here?</h2>
+<p>You can <a title="End of part 1 code" href="http://cdn3.raywenderlich.com/wp-content/uploads/2014/11/SwiftVehiclesPart1Final1.zip" sl-processed="1">download a copy</a> of the project up to this point.</p>
+<p>You’ve set up a base <code>Vehicle</code> class with <code>Car</code>, <code>Motorcycle</code>, and <code>Truck</code> subclasses, all listed in the same table view. However, there’s no way to verify that all of your truck’s size-specific handling is working correctly.</p>
+<p><a href="http://www.raywenderlich.com/?p=81953" title="Intro To Object-Oriented Design: Part 2/2" sl-processed="1">Part 2 of this tutorial</a> will fill out the rest of the app to display more vehicle details. Along the way, you’ll learn about polymorphism, proper initialization, and a couple of additional major design patterns for Object-Oriented Programming.</p>
+<p>Got questions? Ask in the comments below!</p>
+	
+					</div>
+					<footer>
+						<div class="social-links">
+			    			<ul>
+										    							<li class="twitter"><div id="tweetbutton81952m" class="tw_button" style="margin-bottom:10px;"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/tweet_button.ff7d9077a26377d36b6a53b1a95be617.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 109px; height: 20px;"></iframe></div></li>
+		    															<li class="facebook"><div class="fb-like fb_iframe_widget" data-href="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;href=http%3A%2F%2Fwww.raywenderlich.com%2F81952%2Fintro-object-oriented-design-swift-part-1&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=450"><span style="vertical-align: bottom; width: 76px; height: 20px;"><iframe name="f1a129e9" width="450px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like(2).html" style="border: none; visibility: visible; width: 76px; height: 20px;" class=""></iframe></span></div></li>
+								<li class="facebook iframe-link"><iframe src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like.html" allowtransparency="true" frameborder="0" scrolling="no" style="width: 50px; height: 20px;"></iframe></li>
+			    			</ul>
+			    		</div>
+					</footer>
+				</article>
+				<div id="author-information" class="clearfix">
+					<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/arrow@2x.png" width="40" height="21" id="arrow">
+								
+							<div class="author-photo">
+								<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/375.thumbnail.jpg" alt="Ray Fix" class="user-avatar" width="100" height="100">							</div>
+							<div class="author-meta">
+									<a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1">Ray Fix</a>									<p class="bio">Ray Fix is a co-founder of <a href="http://pelfunc.com/" sl-processed="1">Pelfunc, Inc.</a>, a small startup in San Diego California that, in addition to iOS and computer vision consulting, is working on new ways for people to communicate.  Currently he's developing a platform called Squeak16 to do this.<br>
+<br>
+Ray stays healthy by walking, swimming and playing ultimate frisbee.  When he is not doing one of those things, he is writing and dreaming of code in Swift, C++, Ruby, or R.</p>	
+							</div>
+											
+								<ul class="follow-links">
+									<li class="twitter"><a href="http://www.twitter.com/@rayfix" target="_block" sl-processed="1">Follow Ray Fix on Twitter</a></li>
+								</ul>
+								   				</div>
+   				<section id="comments">
+   					<div id="comment-login-module"><form method="post" action="http://www.raywenderlich.com/wp-content/themes/raywenderlich/bridgeapi/phpbb3/login-user.php"><input type="hidden" name="returnurl" value="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1"><div class="comment-area"><h2>Add a Comment</h2><p class="login-text">You need to login to make a comment. If you do not have an account, you can <a href="http://www.raywenderlich.com/login?section=new-account&returnurl=http://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/comment_login_area.php?topicId=19836&forumId=20&pageNumber=1&returnURL=http%3A%2F%2Fwww.raywenderlich.com%2F81952%2Fintro-object-oriented-design-swift-part-1&_=1418591022801" sl-processed="1">create one over here</a></p>Username: <input type="text" name="username" id="username" size="40"> &nbsp;&nbsp;&nbsp; Password: <input type="password" name="password" id="password" size="40"> &nbsp;&nbsp;&nbsp; <input type="submit" value="Log In" name="login" class="RWButton"> <input type="hidden" name="redirect" value="http://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/comment_login_area.php?topicId=19836&amp;forumId=20&amp;pageNumber=1&amp;returnURL=http%3A%2F%2Fwww.raywenderlich.com%2F81952%2Fintro-object-oriented-design-swift-part-1&amp;_=1418591022801#comments"><input type="hidden" name="phpbb_login_box" value="false"><p class="login-text">You can view the discussion in the forum <a href="http://www.raywenderlich.com/forums/viewtopic.php?f=20&t=19836" sl-processed="1">over here</a></p></div></form></div>
+<script>
+	jQuery(".comment-area").css("display", "none");
+	jQuery.ajax({
+		type : "GET",
+		data : { "topicId" : 19836, "forumId" : 20, "pageNumber" : 1, "returnURL" : "http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1" },
+		url : "http://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/comment_login_area.php",
+		cache : false,
+	}).done(function(html) {
+		jQuery("#comment-login-module").html(html);	
+		console.log(html);
+	});
+</script>
+	<div id="article-comments" style="margin-top:20px;"><h2 id="user-comments">User Comments</h2><h2 id="comment-count">6 Comments</h2>		<div class="comment-pages top-pages"> 
+						</div>
+	
+	<ul id="user-comment-list" style="padding: 0 28px 0 0;">
+		<li><div class="comment">Hi all,<br>
+<br>
+Depending on what version of Xcode you are using, you might hit a couple of build errors.  It should work for the latest released version.<br>
+<br>
+cell.textLabel.text should be cell.textLabel?.text if you are using the latest beta. 6.1.1 GM Seed (and 6.2).<br>
+<br>
+As soon as these versions are officially released I plan to update the text and projects.  Until then, if you are using beta Xcode, you might need to add the two ? operators onto textLabel.<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/2af8daf170a3ed693e577a9471ea1f10" alt="" width="100" height="100" class="user-avatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1">rayfix</a> <span class="post-date">on November 28, 2014, 10:53 AM</span></span></li><li><div class="comment">This is one of the reasons it drives me crazy some times... I am getting "use of unresolved identifier 'self'" no this line <br>
+<br>
+func changeGears(newGearName:String) -&gt; String {<br>
+    return String(format: "Put %@ into %@ gear.",self.modelName, newGearName)<br>
+}<br>
+<br>
+any ideas?<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/j_k_nash" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/0b10ac9694d28dfb2753b627d50b5388" alt="" width="100" height="100" data-site-url="http://www.raywenderlich.com/wp-content/themes/raywenderlich" class="user-avatar gravatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/j_k_nash" sl-processed="1">j_k_nash</a> <span class="post-date">on November 28, 2014, 11:22 AM</span></span></li><li><div class="comment"><blockquote><div><cite>j_k_nash Wrote:</cite>This is one of the reasons it drives me crazy some times... I am getting "use of unresolved identifier 'self'" no this line <br>
+<br>
+func changeGears(newGearName:String) -&gt; String {<br>
+    return String(format: "Put %@ into %@ gear.",self.modelName, newGearName)<br>
+}<br>
+<br>
+any ideas?</div></blockquote><br>
+<br>
+Make sure the declaration is inside of the class Vehicle {  ...  } declaration.  changeGears is a method on Vehicle.<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/2af8daf170a3ed693e577a9471ea1f10" alt="" width="100" height="100" class="user-avatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1">rayfix</a> <span class="post-date">on November 28, 2014, 11:27 AM</span></span></li><li><div class="comment">Any reason why you used this<br>
+return String(format: "Turn %d degrees.", normalizedDegrees)<br>
+instead of<br>
+return "Turn \(normalizedDegrees) degrees"<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/h_s" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/5bebedea52698524e632ffebf587fc83" alt="" width="100" height="100" data-site-url="http://www.raywenderlich.com/wp-content/themes/raywenderlich" class="user-avatar gravatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/h_s" sl-processed="1">h_s</a> <span class="post-date">on November 30, 2014, 4:36 PM</span></span></li><li><div class="comment"><blockquote><div><cite>h_s Wrote:</cite>Any reason why you used this<br>
+return String(format: "Turn %d degrees.", normalizedDegrees)<br>
+instead of<br>
+return "Turn \(normalizedDegrees) degrees"</div></blockquote><br>
+<br>
+Thanks for the comment!  For a simple integer, using native Swift interpolation as you have done is probably better.  Using the NSString format initializer can be useful when you need to format a floating point value as the current language specification doesn't give much control over that.... yet.   I guess my fingers were on auto-pilot. <!-- s;) --><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/icon_e_wink.gif" alt=";)" title="Wink"><!-- s;) --><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/2af8daf170a3ed693e577a9471ea1f10" alt="" width="100" height="100" class="user-avatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/rayfix" sl-processed="1">rayfix</a> <span class="post-date">on November 30, 2014, 8:58 PM</span></span></li><li><div class="comment">As you say in the comments, we'll get errors depending on the version of Xcode we're running. I thought I'd point out that in Xcode Version 6.1 (6A1052d), which is the latest stable release, the ? needs to be removed from that line: <br>
+<br>
+    cell.textLabel.text<br>
+<br>
+To avoid an error. Since you said you'd update it after the official release..<br>
+<br>
+BTW<br>
+Thanks for this tutorial.<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/comment-quote@2x.png" width="22" height="12" class="quote-arrow"></div><a href="http://www.raywenderlich.com/u/kakubei" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/27318c2a3ab3083068f8231aef219224" alt="" width="100" height="100" data-site-url="http://www.raywenderlich.com/wp-content/themes/raywenderlich" class="user-avatar gravatar hoverZoomLink"></a><span class="author-details"><a href="http://www.raywenderlich.com/u/kakubei" sl-processed="1">kakubei</a> <span class="post-date">on December 1, 2014, 3:40 AM</span></span></li>	</ul>
+	</div>
+	<script type="text/javascript">
+		var razewareConfig = {
+			pagingAmount : 15,
+			topic_id : 19836,
+			themeUrl: '/wp-content/themes/raywenderlich',
+			non: 'asdf,'
+		};
+		jQuery.ajax({
+			type : "GET",
+				data : { "topic_id" : 19836, "curl" : "http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1" },
+				url : "http://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/comment_section.php",
+				cache : false,
+			}).done(function(html) {
+				jQuery("#article-comments").html(html);	
+				jQuery("#comments .comment-pages.top-pages a").each(function(index) {	
+					jQuery(this).click(function() {
+						jQuery("#pageNumber").attr("value", index+1);
+						razewareComments.getComments(jQuery(this).text());
+						return false;
+					});
+				});
+				jQuery("#comments .comment-pages.bottom-pages a").each(function(index) {	
+					jQuery(this).click(function() {
+						jQuery("#pageNumber").attr("value", index+1);
+						razewareComments.getComments(jQuery(this).text());
+						var target = this.hash,
+					    $target = jQuery(target);
+					    jQuery('html, body').stop().animate({
+					        'scrollTop': $target.offset().top
+					    }, 900, 'swing', function () {
+					        window.location.hash = target;
+					    });
+						return false;
+					});
+				});
+			});
+		
+	</script>
+   				</section>
+			</div>
+		</div>
+	</div>
+	<section id="secondary">
+	<h1 id="other-items-of-interest">Other Items of Interest</h1>
+	<section id="newsletter-signup" class="rw-module">
+		<header>
+			<h1>Ray's Monthly Newsletter</h1>
+		</header>
+		<div>
+			<img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/starter-kit@2x.png" width="109" height="139">
+			<p>Sign up to receive a monthly newsletter with my favorite dev links, and receive a <em>free epic-length tutorial</em> as a bonus!</p>
+			<img src="">
+			<form novalidate="" target="_blank" class="validate" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" method="post" action="http://raywenderlich.us1.list-manage.com/subscribe/post?u=1bc8e630b1599df629818e59b&id=83b6edc87f">
+				<input type="text" id="mce-NAME" class="required" name="NAME" value="" placeholder="Your full name">
+				<input type="email" id="mce-EMAIL" class="required email" name="EMAIL" value="" placeholder="Your best email">
+				<input type="submit" class="button" id="mc-embedded-subscribe" name="subscribe" value="Sign Up!">
+			</form>
+		</div>
+	</section>
+	<section id="site-ads">
+		<h1>Advertise with Us!</h1>
+		<!-- BuySellAds.com Ad Code -->
+		<!-- End BuySellAds.com Ad Code -->
+		<!-- BuySellAds Zone Code -->
+	        
+	        
+	        <div id="bsap_1274837" class="bsarocks bsap_39fcef7ed4520883d78f129c33995fd2"></div>
+	        <!-- End BuySellAds Zone Code -->
+	                       
+	        <!-- BuySellAds.com Zone Code -->
+	        <div id="smallads">
+	        	<div id="bsap_1260352" class="bsarocks bsap_39fcef7ed4520883d78f129c33995fd2 clearfix"></div>
+	        	<div style="clear:both"></div>
+	        </div>
+	        <div id="razeware_ads">
+	        	<a href="https://itunes.apple.com/us/app/math-ninja-hd/id370144476?mt=8&uo=4&at=11ld4k" target="_blank" class="razewareads" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/MathNinja_125.gif" width="125" height="125" style="margin-left:15px"></a>
+	        	<!--<a href="https://itunes.apple.com/us/app/instant-poetry-2/id925723441?ls=1&mt=8&uo=8&at=11ld4k" target="_blank" class="razewareads"><img src="http://cdn1.raywenderlich.com/downloads/InstantPoetry-ad-125x125.gif" width="125" height="125" style="margin-left:15px"></a>-->
+	        	<a href="http://tapity.com/app-making/" target="_blank" class="razewareads" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/AppMaking.jpg" width="125" height="125" style="margin-left:15px"></a>
+	        	
+	        </div>
+			 
+	        <!-- End BuySellAds.com Zone Code -->
+	        <a href="http://www.raywenderlich.com/advertise" class="rw-button2" id="advertise-with-us" sl-processed="1">Advertise Here!</a>
+	</section>
+	
+	<section id="rwdevcon" class="rw-module">
+	<a href="http://www.rwdevcon.com/" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/rwdevcon-website-ad.jpg"></a>
+	</section>
+
+	<section id="site-poll" class="rw-module">
+		<header>
+			<h1>Vote for Our Next Tutorial!</h1>
+		</header>
+						<div id="recent-posts" class="sidebar-entry">
+	            <p>Every week, we alternate between Gaming and Non-Gaming tutorial votes.  This week: Gaming!</p>
+	            <ul>
+	                <div id="polls-90" class="wp-polls">
+	<form id="polls_form_90" class="wp-polls-form" action="http://www.raywenderlich.com/index.php" method="post">
+		<p style="display: none;"><input type="hidden" id="poll_90_nonce" name="wp-polls-nonce" value="41869f7616"></p>
+		<p style="display: none;"><input type="hidden" name="poll_id" value="90"></p>
+		<div id="polls-90-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-552" name="poll_90" value="552"> <label class="poll-answer-label" for="poll-answer-552">How to Make a Game Like Monument Valley with Scene Kit</label></li>
+		<li><input type="radio" id="poll-answer-553" name="poll_90" value="553"> <label class="poll-answer-label" for="poll-answer-553">How to Make Terrain with Scene Kit</label></li>
+		<li><input type="radio" id="poll-answer-554" name="poll_90" value="554"> <label class="poll-answer-label" for="poll-answer-554">How to Make a Game Like Fruit Ninja with Sprite Kit</label></li>
+		<li><input type="radio" id="poll-answer-555" name="poll_90" value="555"> <label class="poll-answer-label" for="poll-answer-555">How to Make a Game Like Tetris with Sprite Kit</label></li>
+		<li><input type="radio" id="poll-answer-556" name="poll_90" value="556"> <label class="poll-answer-label" for="poll-answer-556">How to Use the Sprite Kit Scene Editor</label></li>
+		</ul><p><input type="button" id="vote" name="vote" value="CAST YOUR VOTE" class="Buttons" onclick="poll_vote(90);"></p></div>
+	</form>
+</div>
+<div id="polls-90-loading" class="wp-polls-loading"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/loading.gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image">&nbsp;Loading ...</div>
+	            </ul>
+	
+	    		<p><em>Last week's winner</em>:<span class="next-weeks-tutorial"> Apple TestFlight Tutorial.</span>				</p><p class="suggest-a-tutorial"><a href="http://www.raywenderlich.com/forums/viewtopic.php?f=2&t=284" sl-processed="1">Suggest a Tutorial</a> - <a href="http://www.raywenderlich.com/tutorial-vote-results" sl-processed="1">Past Results</a></p>
+	        </div>
+	        	
+	</section>
+		
+	<section id="site-poll" class="rw-module">
+		<header>
+			<h1>Hang Out With Us!</h1>
+		</header>			
+			<div class="sidebar-entry">
+	            <p>Every month, we have a free live Tech Talk - come hang out with us!</p><br>	            
+	            <p>Coming up in December: The Great CALayer Tour</p>
+	            <a href="https://plus.google.com/u/0/events/ckckuhqb2ra6e65n9nj2augs760" class="rw-button2" sl-processed="1">Sign Up - December</a>	
+	        </div>	        
+	</section>	
+	
+	<!--<section id="site-poll" class="rw-module">
+		<header>
+			<h1>RWDevCon Conference?</h1>
+		</header>
+						<div id="recent-posts" class="sidebar-entry">
+	            <p>We are considering having an official raywenderlich.com conference called <em>RWDevCon</em> in DC in early 2015.</p><p>The conference would be focused on high quality Swift/iOS 8 technical content, and connecting as a community.</p>
+	            <p>Would this be something you'd be interested in?</p>
+	            <ul>
+	                <div id="polls-84" class="wp-polls">
+	<form id="polls_form_84" class="wp-polls-form" action="/index.php" method="post">
+		<p style="display: none;"><input type="hidden" id="poll_84_nonce" name="wp-polls-nonce" value="7971fc72d2" /></p>
+		<p style="display: none;"><input type="hidden" name="poll_id" value="84" /></p>
+		<div id="polls-84-ans" class="wp-polls-ans"><ul class="wp-polls-ul">
+		<li><input type="radio" id="poll-answer-518" name="poll_84" value="518" /> <label class="poll-answer-label" for="poll-answer-518">Yes - would prefer weekend</label></li>
+		<li><input type="radio" id="poll-answer-519" name="poll_84" value="519" /> <label class="poll-answer-label" for="poll-answer-519">Yes - would prefer weekdays</label></li>
+		<li><input type="radio" id="poll-answer-520" name="poll_84" value="520" /> <label class="poll-answer-label" for="poll-answer-520">No - not interested</label></li>
+		<li><input type="radio" id="poll-answer-521" name="poll_84" value="521" /> <label class="poll-answer-label" for="poll-answer-521">No - not a good location</label></li>
+		<li><input type="radio" id="poll-answer-522" name="poll_84" value="522" /> <label class="poll-answer-label" for="poll-answer-522">No - not a good time</label></li>
+		</ul><p><input type="button" id="vote" name="vote" value="CAST YOUR VOTE" class="Buttons" onclick="poll_vote(84);" /></p></div>
+	</form>
+</div>
+<div id="polls-84-loading" class="wp-polls-loading"><img src="http://www.raywenderlich.com/wp-content/plugins/wp-polls/images/loading.gif" width="16" height="16" alt="Loading ..." title="Loading ..." class="wp-polls-image" />&nbsp;Loading ...</div>
+	            </ul>		    		
+	        </div>
+	        	
+	</section>-->
+	
+	<section id="our-books" class="rw-module">
+		<header>
+			<h1>Our Books</h1>
+		</header>
+		<div>
+			<ul class="books">
+				<li><a href="http://www.raywenderlich.com/store/platformer-game-starter-kit" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/pgsk@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/ios-games-by-tutorials" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/skt@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/ios-apprentice" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/ia1234@2x.png" width="110" height="142"></a></li><li><a href="" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/awt@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/space-game-starter-kit-2" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/sgsk@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/swift-by-tutorials" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/swt@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/ios-6-by-tutorials" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/i6t@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/core-data-tutorials-ios-8-swift-edition" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/cdt@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/ios-8-by-tutorials" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/i8t@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/ios-7-by-tutorials" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/i7t@2x.png" width="110" height="142"></a></li><li><a href="http://www.raywenderlich.com/store/beat-em-up-game-starter-kit" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/bgsk@2x.png" width="110" height="142"></a></li>			</ul>
+		</div>
+	</section>
+	
+	
+	<section id="tutorial-team" class="rw-module">
+		<header>
+			<h1>Our Team</h1>
+		</header>
+		<div>
+			<h2>Tutorial Team</h2>
+			<ul><li><a href="http://www.raywenderlich.com/about#cfulton" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/95.thumbnail.jpg" alt="Charlie Fulton" class="user-avatar" width="100" height="100"></a></li><li><a href="http://www.raywenderlich.com/about#cwagner" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file.php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#mmorey" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/368.thumbnail.jpg" alt="Matthew Morey" class="user-avatar" width="100" height="100"></a></li></ul><p>... <a href="http://www.raywenderlich.com/about#abt_tutorial-team" sl-processed="1">60 total!</a></p><h2>Update Team</h2><ul><li><a href="http://www.raywenderlich.com/about#jfrost" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(1).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#mkonutgan" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(2).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#zmahieddine" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/383.thumbnail.jpg" alt="Zouhair Mahieddine" class="user-avatar" width="100" height="100"></a></li></ul><p>... <a href="http://www.raywenderlich.com/about#abt_update-team" sl-processed="1">12 total!</a></p><h2>Editorial Team</h2><ul><li><a href="http://www.raywenderlich.com/about#rturton" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(3).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#wlincoln" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(4).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#dsumner" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(5).php" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="http://www.raywenderlich.com/about#abt_editorial-team" sl-processed="1">17 total!</a></p><h2>Code Team</h2><ul><li><a href="http://www.raywenderlich.com/about#otherox" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/230.thumbnail.jpg" alt="Orta Therox" class="user-avatar" width="100" height="100"></a></li><li><a href="http://www.raywenderlich.com/about#dgrandinetti" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(6).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#ahegedüs" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(7).php" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="http://www.raywenderlich.com/about#abt_code-team" sl-processed="1">3 total!</a></p><h2>Subject Matter Experts</h2><ul><li><a href="http://www.raywenderlich.com/about#rcasey" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/215.thumbnail.jpg" alt="Richard Casey" class="user-avatar" width="100" height="100"></a></li><li><a href="http://www.raywenderlich.com/about#mvalenzuela" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(8).php" width="100" height="100" class="user-avatar"></a></li><li><a href="http://www.raywenderlich.com/about#rbelton" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/file(9).php" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="http://www.raywenderlich.com/about#abt_subject-matter-experts" sl-processed="1">4 total!</a></p>		</div>
+	</section>
+</section>	</div></div>
+			<footer id="colophon" class="clearfix">
+		<h1 id="about-raywenderlich">About RayWenderlich.com</h1><div class="wrapper clearfix"><div id="css-table-enclosure"><div class="forum-posts-sep footer-separator first table-col"></div><div class="forum-posts table-col"><h2>Recent Forum Posts</h2><ul class="comments"><li><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/cd7cfeedef7f45720ab47bded642eaff" alt="" width="100" height="100" data-site-url="http://cdn1.raywenderlich.com/wp-content/themes/raywenderlich" class="user-avatar gravatar hoverZoomLink"><div>Hi Caroline,
+
+Managed to get to the DetailsVIewController by selecting an existing row.  ...<br> in <a href="http://www.raywenderlich.com/forums/viewtopic.php?f=20&t=19908" sl-processed="1">Storyboards Tutorial in Swift: Part 2</a></div></li><li><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/41e8e5d814c414b4a573ffef1bf74c57" alt="" width="100" height="100" data-site-url="http://cdn1.raywenderlich.com/wp-content/themes/raywenderlich" class="user-avatar gravatar hoverZoomLink"><div>caroline wrote:f77hacker wrote:is there  ...<br> in <a href="http://www.raywenderlich.com/forums/viewtopic.php?f=20&t=19908" sl-processed="1">Storyboards Tutorial in Swift: Part 2</a></div></li></ul><a href="http://www.raywenderlich.com/forums/" class="RWButton" sl-processed="1">VISIT THE FORUM »</a></div><div class="facebook-page-sep footer-separator table-col"></div><div class="facebook-page table-col"><h2>Like Us on Facebook</h2><div class="like-box"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/small-logo@2x.png" width="50" height="50" id="small-logo"><h3>Ray Wenderlich</h3>							<iframe src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like(1).html" allowtransparency="true" frameborder="0" scrolling="no" style="width: 50px; height: 20px;"></iframe>
+							</div>						    <p class="page-like-count"><span id="like-count">7066</span> people like <a href="https://www.facebook.com/raywenderlich" target="_blank" sl-processed="1">Ray Wenderlich</a></p>
+							<div class="fb-window">
+								<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/pages/raywenderlichcom/516533855059578" data-width="292" data-show-faces="true" data-colorscheme="dark" data-stream="false" data-header="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;color_scheme=dark&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2Fraywenderlichcom%2F516533855059578&amp;locale=en_US&amp;sdk=joey&amp;show_faces=true&amp;stream=false&amp;width=292"><span style="vertical-align: bottom; width: 292px; height: 241px;"><iframe name="f238a32db8" width="292px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like_box Facebook Social Plugin" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/like_box.html" style="border: none; visibility: visible; width: 292px; height: 241px;" class=""></iframe></span></div>
+							</div>
+						</div><div class="latest-tweets-sep footer-separator table-col"></div><div class="latest-tweets table-col"><h2>Our Recent Tweets</h2><ul id="rw-tweet-list"><li><a href="http://twitter.com/dasdom" target="_blank" class="tweet-author" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/UWw7vUJ1_normal.png" alt="dasdom" width="48" height="48"></a><div class="tweet-content"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/tweet-arrow@2x.png" class="tweet-arrow" width="8" height="14">Endspurt: Die vegane Weihnachtsbäckerei kostet bis Weihnachten nur noch 89 ct. Kaufen, backen, geniessen! <a href="https://t.co/CUUt6PmZUs" target="_blank" sl-processed="1">https://t.co/CUUt6PmZUs</a><br><a href="http://twitter.com/dasdom" target="_blank" sl-processed="1">dasdom</a> -<span class="tweet-time">23 seconds ago</span></div></li><li><a href="http://twitter.com/rwenderlich" target="_blank" class="tweet-author" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/Z3mNN_Ny_normal.png" alt="rwenderlich" width="48" height="48"></a><div class="tweet-content"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/tweet-arrow@2x.png" class="tweet-arrow" width="8" height="14">Nice set of Sprite Kit nodes &amp;amp; utilities: <a href="http://t.co/bnp0s4MYye" target="_blank" sl-processed="1">http://t.co/bnp0s4MYye</a> (via <a href="http://twitter.com/SizzlerWA" target="_blank" sl-processed="1">@SizzlerWA</a>)<br><a href="http://twitter.com/rwenderlich" target="_blank" sl-processed="1">Ray Wenderlich</a> -<span class="tweet-time">over 1 hour(s) ago</span></div></li></ul><a href="https://twitter.com/rwenderlich/lists/raywenderlich-com-team" class="RWButton" sl-processed="1">FOLLOW US ON TWITTER</a></div><div class="footer-separator last table-col"></div></div></div><div class="navigation-band"><div class="wrapper"><div class="left-col">© 2014 <a href="http://www.razeware.com/" sl-processed="1">Razeware LLC. All rights reserved.</a></div><div class="right-col"><ul><li><a href="http://www.raywenderlich.com/write-for-us" sl-processed="1">WRITE FOR US</a></li><li><a href="http://www.raywenderlich.com/faq" sl-processed="1">FAQ</a></li><li><a href="http://www.raywenderlich.com/advertise" sl-processed="1">ADVERTISE</a></li><li><a href="http://www.raywenderlich.com/contact" sl-processed="1">CONTACT</a></li></ul></div></div></div><div id="gearbox"><div class="wrapper"><div id="left-gears"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_small@2x.png" width="56" height="56" class="left-gear clockwise-motion small-gear gear" id="gear1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_medium@2x.png" width="66" height="66" class="left-gear counter-clockwise-motion  medium-gear gear" id="gear2"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_large@2x.png" width="96" height="96" class="left-gear clockwise-motion large-gear gear" id="gear3"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_medium@2x.png" width="67" height="67" class="left-gear counter-clockwise-motion medium-gear gear" id="gear4"></div><a href="http://www.raywenderlich.com/" id="footer-logo" sl-processed="1"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/logo_stage5@2x.png" width="160" height="75" border="0" class="logo-sat"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/logo_stage1@2x.png" width="160" height="75" border="0" class="logo">
+									</a><div id="right-gears"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_small@2x.png" width="51" height="50" class="right-gear clockwise-motion small-gear gear" id="gear5"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_medium@2x.png" width="67" height="67" class="right-gear counter-clockwise-motion  medium-gear gear" id="gear6"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_large@2x.png" width="96" height="96" class="right-gear clockwise-motion large-gear gear" id="gear7"><img src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/gear_medium@2x.png" width="67" height="67" class="right-gear counter-clockwise-motion  medium-gear gear" id="gear8"></div></div></div><footer><script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery.cookie.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var count;
+        if ( !jQuery.cookie('wwsgd_visits') ) {
+            count = 1;
+        }
+        else {
+            count = parseInt(jQuery.cookie('wwsgd_visits'), 10) + 1;
+        }
+        jQuery.cookie('wwsgd_visits', count, { expires: 365, path: "/" });
+
+        if ( count <= 5 ) {
+            jQuery(".wwsgd").show();
+        }
+    });
+</script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/widgets.js"></script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/jquery.form.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.raywenderlich.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/scripts.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"http:\/\/www.raywenderlich.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/polls-js.js"></script>
+		
+		<script type="text/javascript">var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '11ld4k']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src='http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+				<script>
+			if (jQuery.browser.msie) { jQuery("html").addClass("msie"); }
+			if (typeof window.chrome === "object") { jQuery("html").addClass("chrome"); }
+		</script>
+	
+
+
+
+<!-- Dynamic page generated in 1.180 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2014-12-14 13:17:36 -->
+
+<!-- Compression = gzip --></footer></footer><div class="swiftype-widget"><div class="autocomplete" style="position: absolute; z-index: 9999; top: 97px; left: 1115px; width: 203px; display: none;"><ul></ul></div></div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/7r8gQb8MIqE.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Intro to Object-Oriented Design in Swift  Part 1 2 - Ray Wenderlich_files/7r8gQb8MIqE(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><img id="hzDownscaled" style="position: absolute; top: -10000px;"><div class="pkt_ext_container pkt_ext_container_flexbox pkt_ext_container_active pkt_ext_container_detailactive pkt_ext_container_inactive" aria-live="polite">                    <div class="pkt_ext_initload">                        <div class="pkt_ext_loadingspinner"><div></div></div>                    </div>                    <div class="pkt_ext_finalstatedetail">                        <h2></h2>                    </div>                    <div class="pkt_ext_detail">                        <a title="Close" class="pkt_ext_close" href="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1#">Close</a>                        <h2>Page Saved</h2>                        <nav class="pkt_ext_item_actions pkt_ext_cf">                            <ul>                                <li><a class="pkt_ext_openpocket" href="http://www.getpocket.com/a" target="_blank">Open Pocket</a></li>                                <li class="pkt_ext_actions_separator"></li>                                <li><a class="pkt_ext_removeitem" href="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1#">Remove Page</a></li>                            </ul>                        </nav>                        <p class="pkt_ext_edit_msg"></p>                        <ul class="pkt_ext_rainbow_separator pkt_ext_cf">                            <li class="pkt_ext_color_1"></li>                            <li class="pkt_ext_color_2"></li>                            <li class="pkt_ext_color_3"></li>                            <li class="pkt_ext_color_4"></li>                        </ul>                        <div class="pkt_ext_tag_detail pkt_ext_cf">                            <div class="pkt_ext_tag_input_wrapper">                                <div class="pkt_ext_tag_input_blocker"></div>                                <ul class="token-input-list"><li class="token-input-input-token"><input type="text" autocomplete="off" id="token-input-" placeholder="Add Tags" style="outline: none; width: 200px;"><tester style="position: absolute; top: -9999px; left: -9999px; width: auto; font-size: 14px; font-family: proxima-nova, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif; font-weight: 400; letter-spacing: 0px; white-space: nowrap;"></tester></li></ul><input class="pkt_ext_tag_input" type="text" placeholder="Add Tags" style="display: none;">                            </div>                            <a href="http://www.raywenderlich.com/81952/intro-object-oriented-design-swift-part-1#" class="pkt_ext_btn pkt_ext_btn_disabled">Save</a>                        </div>                    </div></div><div class="token-input-dropdown token-input-dropdown-tag" style="display: none;"></div></body></html>
