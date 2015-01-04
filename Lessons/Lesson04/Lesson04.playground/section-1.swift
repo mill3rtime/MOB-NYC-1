@@ -1,20 +1,99 @@
-// Playground - noun: a place where people can play
-// Lesson 04
+//// Playground - noun: a place where people can play
+//// Lesson 04
+//
+//// Complete these, in order, writing code under each TODO statement. Each statement calls for a function to be written, write each of them and then immediately call it after the function definition.
+//
+//
+//
+//
+//// TODO: Write a function that prints out "Hello world!" 10 times
+//
+//// TODO: Write a function that prints out "Hit this line {number of iterations of the loop} times!" 20 times
+//
+//func hitThis (){
+//    for var count = 0; count<20; ++count{
+//        println("hit this line \(count) times!")
+//    }
+//}
+//
+//hitThis()
+//
+//func hitThat (){
+//    for index in 0...19{
+//        println("this this line \(index) time!")
+//    }
+//}
+//
+//hitThat()
+//
+//
+//
+//
+//// TODO: Write a function that accepts a string as a parameter. Print "Hello {value of string}!"
+//
+//func sayThis (words: String){
+//    println("Hello \(words)!!!")
+//}
+//
+//sayThis("guys")
+//
+//
+//
+//// TODO: Write a function accepts a string optional. If the string optional exists, print "Hello {value of string}!". If it doesn't, print "Hello world!"
+//
+//
+//
+//
+//// TODO: Write a function that takes one parameter, n, and returns an integer, the nth series in the fibonacci
+//// sequence. The first fibonacci number is 0, the second is 1, the third is 1, the fourth is 2, fifth is 3, sixth is 5, etc. fibonacci numbers at sequence n are the sum of the n-1 and n-2 fibonacci number.
 
-// Complete these, in order, writing code under each TODO statement. Each statement calls for a function to be written, write each of them and then immediately call it after the function definition.
 
-// TODO: Write a function that prints out "Hello world!" 10 times
+func fibo (num: Int) ->Int{
+  
+    if num > 0{
+    
+    let num = (num - 1) + (num - 2)
+    
+    
+    return num
+        
+    }
+    
+    return 0
+    
 
-// TODO: Write a function that prints out "Hit this line {number of iterations of the loop} times!" 20 times
+}
 
-// TODO: Write a function that accepts a string as a parameter. Print "Hello {value of string}!"
 
-// TODO: Write a function accepts a string optional. If the string optional exists, print "Hello {value of string}!". If it doesn't, print "Hello world!"
 
-// TODO: Write a function that takes one parameter, n, and returns an integer, the nth series in the fibonacci
-// sequence. The first fibonacci number is 0, the second is 1, the third is 1, the fourth is 2, fifth is 3, sixth is 5, etc. fibonacci numbers at sequence n are the sum of the n-1 and n-2 fibonacci number.
+
+println(fibo(9))
 
 // TODO: Write a function that calls the above function in order to print the sum of the first 20 fibonacci numbers.
+
+
+func sumIt(){
+    
+    var sum = 0
+    
+    for var count = 0; count < 20; count = count + 1{
+        
+        
+        println("\(sum)")
+        
+        
+        sum = sum + fibo(count)
+        
+    }
+    
+    println("\(sum)")
+}
+
+sumIt()
+
+
+
+
 
 // TODO: Write a function that takes in a number and prints out whether it is prime, composite or neither.
 

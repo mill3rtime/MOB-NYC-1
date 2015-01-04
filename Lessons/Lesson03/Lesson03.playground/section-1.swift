@@ -73,7 +73,7 @@ for var x = 1; x < 51; x=x+1
 }
 
 
-for index in 1...50{
+for index in 0...49{
     var n = ((7-1) * index)
 println(n)
 }
