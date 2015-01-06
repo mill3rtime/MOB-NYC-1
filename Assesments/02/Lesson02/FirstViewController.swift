@@ -20,24 +20,33 @@ class FirstViewController: UIViewController {
     TODO four: Hook up the button to a NEW function (in additino to the three above). Print “you can drive” if the user is above 16 but below 18. It should print “You can drive and vote” if the user is above 18 but below 21. If the user is above 21, it should print “you can drive, vote and drink (but not at the same time!”.
     */
     
-    // MM should make value for Age but inputAge is in a diff vlass  var age: Int = inputAge.text.toInt()
+    // MM should make value for Age but inputAge is in a diff class  var age: Int = inputAge.text.toInt()
     
     
-    // MM why won't last method run.
     
     
     @IBOutlet weak var inputName: UITextField!
     
     @IBOutlet weak var inputAge: UITextField!
     
-    @IBOutlet weak var genText: UIButton!
+
     
     @IBOutlet weak var bottomText: UILabel!
     
     
+    //
+   
+    @IBAction func buttonTapped(sender: AnyObject) {
+    
+        genText()
+        nameAge()
+        youCan()
+        youCan2()
+        
+    }
     
     
-    @IBAction func genText(sender: AnyObject) {
+    func genText() {
         
         bottomText.text = "hello world."
     }
@@ -45,17 +54,17 @@ class FirstViewController: UIViewController {
     
     
     
-    @IBAction func nameAge(sender: AnyObject) {
+    func nameAge() {
         
         bottomText.text = "Hello \(inputName.text) you are \(inputAge.text) years old"
     }
     
-   
     
     
-    @IBAction func youCan(sender: AnyObject) {
+    
+    func youCan() {
         
-        if let age: Int? = inputAge.text.toInt() {
+        if let age: Int = inputAge.text.toInt() {
 
         
         if age >= 21 {
@@ -76,9 +85,9 @@ class FirstViewController: UIViewController {
     } // close youCan
 
     
-    @IBAction func youCan2(sender: AnyObject) {
+    func youCan2() {
         
-              if let age: Int? = inputAge.text.toInt() {
+              if let age: Int = inputAge.text.toInt() {
         
         if age >= 16 && age <= 18 {
             
@@ -86,7 +95,7 @@ class FirstViewController: UIViewController {
         
         }
                 
-                else if age >= 16 && age <= 21 {
+                else if age >= 16 && age < 21 {
                     
                     bottomText.text = "you can drive and vote"
                 }

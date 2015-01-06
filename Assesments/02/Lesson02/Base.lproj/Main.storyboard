@@ -61,10 +61,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="genText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="D4C-OW-kdT"/>
-                                    <action selector="nameAge:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aQB-a7-C3a"/>
-                                    <action selector="youCan2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Llh-iJ-NeO"/>
-                                    <action selector="youCan:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K1c-h2-Ql9"/>
+                                    <action selector="buttonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z5W-pU-TVT"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dvu-Gz-gU3">

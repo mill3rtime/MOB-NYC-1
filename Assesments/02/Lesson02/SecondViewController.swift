@@ -22,17 +22,19 @@ class SecondViewController: UIViewController {
     
     @IBAction func addNumbers(sender: AnyObject) {
         
-        if inputNumber.text.isEmpty {
-            return
-        }
+      //  if inputNumber.text.isEmpty {
+        //    return
+        //}
         
         
-        var addNumber: Int? = inputNumber!.text.toInt()
         
-        numericalSum += addNumber!
+        
+        if let var addNumber: Int = inputNumber.text.toInt(){
+        
+        numericalSum += addNumber
         
         sumDisplay.text = "\(numericalSum)"
-       
+        }
         
     } // close addNumbers
     

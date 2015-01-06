@@ -21,28 +21,34 @@ class ThirdViewController: UIViewController {
     
     @IBAction func checkIfEven(sender: AnyObject) {
         
-        var numberValue: Int? = inputEvenNumber.text.toInt()
         
-       if inputEvenNumber.text.isEmpty {
-           return
-         }
+       
         
-      else if numberValue!%2 == 0 {
+        if let numberValue: Int = inputEvenNumber.text.toInt() {
+        
+      // if inputEvenNumber.text.isEmpty {
+        //  return
+         //}
+        
+       
+        
+       if numberValue % 2 == 0 {
             
             messageText.text = "is even"
             
         }
         
-        else if numberValue!%2 != 0 {
+        else if numberValue % 2 != 0 {
             
             messageText.text = "is not even"
             
+            }
+            
         }
-        
 
-    }
+    } // close check if even
     
         
     }
-    
+
 
