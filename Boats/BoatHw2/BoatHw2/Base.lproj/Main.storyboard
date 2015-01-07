@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="BoatHw2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfD-up-NXJ">
+                                <rect key="frame" x="135" y="231" width="232" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="J0m-Gq-Dvf"/>
+                                    <constraint firstAttribute="width" constant="232" id="Mmn-xO-cqb"/>
+                                    <constraint firstAttribute="width" constant="232" id="NHt-4T-hjm"/>
+                                    <constraint firstAttribute="height" constant="21" id="vMP-UF-xJz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J0m-Gq-Dvf"/>
+                                        <exclude reference="Mmn-xO-cqb"/>
+                                        <exclude reference="NHt-4T-hjm"/>
+                                        <exclude reference="vMP-UF-xJz"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlT-dN-mA5">
+                                <rect key="frame" x="198" y="141" width="82" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3on-Fw-EX3"/>
+                                    <constraint firstAttribute="height" constant="46" id="oZo-OL-KoS"/>
+                                    <constraint firstAttribute="width" constant="82" id="wok-dC-dZw"/>
+                                </constraints>
+                                <state key="normal" title="Go Slow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3on-Fw-EX3"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="goSlower:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DLH-fa-Xl1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RlT-dN-mA5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="164" id="4bf-dx-cD8"/>
+                            <constraint firstItem="dfD-up-NXJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="119" id="Elg-la-dbm"/>
+                            <constraint firstAttribute="centerX" secondItem="RlT-dN-mA5" secondAttribute="centerX" id="HNP-jr-uzq"/>
+                            <constraint firstItem="RlT-dN-mA5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="104" id="Kmf-h3-BNP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dfD-up-NXJ" secondAttribute="trailing" constant="217" id="N7o-3i-QOI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RlT-dN-mA5" secondAttribute="trailing" constant="262" id="SeA-dH-XWv"/>
+                            <constraint firstAttribute="centerX" secondItem="dfD-up-NXJ" secondAttribute="centerX" id="TGl-rc-b5p"/>
+                            <constraint firstItem="dfD-up-NXJ" firstAttribute="top" secondItem="RlT-dN-mA5" secondAttribute="bottom" constant="55" id="de9-yJ-YWg"/>
+                            <constraint firstItem="RlT-dN-mA5" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="121" id="jSq-iF-nuh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="dfD-up-NXJ" secondAttribute="bottom" constant="348" id="jtE-PC-NCF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4bf-dx-cD8"/>
+                                <exclude reference="Kmf-h3-BNP"/>
+                                <exclude reference="SeA-dH-XWv"/>
+                                <exclude reference="de9-yJ-YWg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="statusString" destination="dfD-up-NXJ" id="l3U-Uh-pPv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="336"/>
+        </scene>
+    </scenes>
+</document>

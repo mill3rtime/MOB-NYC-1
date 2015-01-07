@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -33,23 +33,23 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonbtn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tjS-jd-k9J"/>
+                                    <action selector="buttonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Gb2-CC-8k4"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FT6-yz-TED">
-                                <rect key="frame" x="252" y="217" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="8oN-Qb-EOt"/>
-                                    <constraint firstAttribute="width" constant="97" id="IRK-q3-Ucy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sfP-7n-qlr">
                                 <rect key="frame" x="252" y="149" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="L5D-Kf-pDf"/>
                                     <constraint firstAttribute="width" constant="97" id="aQG-mp-e6I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FT6-yz-TED">
+                                <rect key="frame" x="252" y="217" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8oN-Qb-EOt"/>
+                                    <constraint firstAttribute="width" constant="97" id="IRK-q3-Ucy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -91,9 +91,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="input" destination="FT6-yz-TED" id="2Ck-64-8tM"/>
-                        <outlet property="label" destination="xC9-zR-FX5" id="Rad-Z3-JRI"/>
-                        <outlet property="textField" destination="sfP-7n-qlr" id="dqh-wS-7qS"/>
+                        <outlet property="baseTotal" destination="FT6-yz-TED" id="iqB-3g-vCO"/>
+                        <outlet property="label" destination="xC9-zR-FX5" id="KXr-bp-Fei"/>
+                        <outlet property="tipPercent" destination="sfP-7n-qlr" id="T6u-va-1rb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
