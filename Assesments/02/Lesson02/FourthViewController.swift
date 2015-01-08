@@ -22,27 +22,34 @@ class FourthViewController: UIViewController {
 
     @IBAction func calcFib(sender: AnyObject) {
         
-        if inputFibNumber.text.isEmpty {
+      //  if inputFibNumber.text.isEmpty {
             
-            return
-        }
+        //    return
+        // }
         
-        let fibAdderInstance = fibAdder()
         
-        fibLabel.text = "\(fibAdderInstance.fibonacciNumberatIndex(inputFibNumber.text.toInt()!))"
         
+        var fibAdderInstance = fibAdder()
+       
+        if let userInput:Int = inputFibNumber.text.toInt() {
+        
+        var print:Int = fibAdderInstance.fibonacciNumberatIndex(userInput)
+            
+            fibLabel.text = "\(print)"
 
+        }
         
     }
     
     
     class fibAdder {
         
-       
+        init() {}
+        
         func fibonacciNumberatIndex(n:Int) -> Int {
             
-       
         
+            
         //Error condition:
         
         if(n<0) {

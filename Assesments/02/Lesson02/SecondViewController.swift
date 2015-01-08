@@ -33,7 +33,7 @@ class SecondViewController: UIViewController {
         
         numericalSum += addNumber
         
-        sumDisplay.text = "\(numericalSum)"
+        sumDisplay.text = "\(numericalSum)"    // should actually call func here not implement
         }
         
     } // close addNumbers
