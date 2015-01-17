@@ -19,7 +19,7 @@ class Player {
     
         }
     
-    func attack() -> (message: String, damage: Int) {
+    func attack() -> (message: String, damage: Int) {    // PLAYER attack
         
         
        var aMessage = message
@@ -36,20 +36,13 @@ class Player {
 
 
 
-        
-       
-   
-
-    
-    
-
     class GoodPlayer: Player {
         
         
         override init(){
             super.init()
             message = "Good hit"
-            damage = 0
+            damage = 10
             
         }
         
@@ -84,32 +77,32 @@ class Match {
     func playGame() -> String{
         
         
-        if p1.isAlive(){
+        while p1.isAlive() && p2.isAlive(){
             
-            
-            if p2.isAlive(){
-                
-                
-                
-                
                 p1.health -= p2.attack().1
                 p2.health -= p1.attack().1
-                
-                
-            }
+            
+        }
+        if p1.isAlive() {
+            return "p1 wins!"
+        }
+        else {
+            return "p2 wins!"
+        }
+        
         }
         
      
         
         
         
-    }
-    
-    
-    
-    
-    
 }
+
+    
+    
+    
+    
+
 
    
     
