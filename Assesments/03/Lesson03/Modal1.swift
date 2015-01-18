@@ -12,20 +12,20 @@ class Modal1: UIViewController {
     
     
     @IBAction func dismissModal1(sender: AnyObject) {
-   
-     dismissViewControllerAnimated(true, completion: nil)
+        
+        dismissViewControllerAnimated(true, completion: nil)
         // (?) why cant I put flag: true as param above?
         
-
-  
-
-    
+        
+        
+        
+        
         
     }
-
     
-
-
+    
+    
+    
     
 }
 
