@@ -165,7 +165,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startMatch:" destination="jbP-mG-OO7" eventType="touchUpInside" id="sAm-nc-3bT"/>
+                                    <action selector="startMatch:" destination="jbP-mG-OO7" eventType="touchUpInside" id="Z7c-Ie-zCE"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5L-np-K9N">

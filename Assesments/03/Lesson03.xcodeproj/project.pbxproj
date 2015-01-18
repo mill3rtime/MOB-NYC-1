@@ -14,6 +14,8 @@
 		5DCED99F19D8DC9B00DE1DC2 /* Lesson03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCED99E19D8DC9B00DE1DC2 /* Lesson03Tests.swift */; };
 		5DCED9A919D8DF0800DE1DC2 /* ArrayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCED9A819D8DF0800DE1DC2 /* ArrayTableViewController.swift */; };
 		5DCED9AB19D8DF4E00DE1DC2 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCED9AA19D8DF4E00DE1DC2 /* Animal.swift */; };
+		D4B0AC9E1A6B08BD0093E275 /* Modal1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0AC9D1A6B08BD0093E275 /* Modal1.swift */; };
+		D4B0ACA01A6B49C00093E275 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B0AC9F1A6B49C00093E275 /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		5DCED99E19D8DC9B00DE1DC2 /* Lesson03Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson03Tests.swift; sourceTree = "<group>"; };
 		5DCED9A819D8DF0800DE1DC2 /* ArrayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTableViewController.swift; sourceTree = "<group>"; };
 		5DCED9AA19D8DF4E00DE1DC2 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		D4B0AC9D1A6B08BD0093E275 /* Modal1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal1.swift; sourceTree = "<group>"; };
+		D4B0AC9F1A6B49C00093E275 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +85,11 @@
 			children = (
 				5DCED9A819D8DF0800DE1DC2 /* ArrayTableViewController.swift */,
 				5DCED9AA19D8DF4E00DE1DC2 /* Animal.swift */,
+				D4B0AC9F1A6B49C00093E275 /* Dog.swift */,
 				5DCED98819D8DC9B00DE1DC2 /* AppDelegate.swift */,
 				5DCED98A19D8DC9B00DE1DC2 /* ViewController.swift */,
 				5DCED98C19D8DC9B00DE1DC2 /* Main.storyboard */,
+				D4B0AC9D1A6B08BD0093E275 /* Modal1.swift */,
 				5DCED98F19D8DC9B00DE1DC2 /* Images.xcassets */,
 				5DCED98619D8DC9B00DE1DC2 /* Supporting Files */,
 			);
@@ -216,7 +222,9 @@
 			files = (
 				5DCED9A919D8DF0800DE1DC2 /* ArrayTableViewController.swift in Sources */,
 				5DCED9AB19D8DF4E00DE1DC2 /* Animal.swift in Sources */,
+				D4B0ACA01A6B49C00093E275 /* Dog.swift in Sources */,
 				5DCED98B19D8DC9B00DE1DC2 /* ViewController.swift in Sources */,
+				D4B0AC9E1A6B08BD0093E275 /* Modal1.swift in Sources */,
 				5DCED98919D8DC9B00DE1DC2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +409,7 @@
 				5DCED9A419D8DC9B00DE1DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5DCED9A519D8DC9B00DE1DC2 /* Build configuration list for PBXNativeTarget "Lesson03Tests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +418,7 @@
 				5DCED9A719D8DC9B00DE1DC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
