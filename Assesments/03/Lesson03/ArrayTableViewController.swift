@@ -30,13 +30,8 @@ class ArrayTableViewController: UITableViewController {
         
         cell.textLabel.text = animalArray[indexPath.row].prettyAnimalName()
         
-        
         return cell
     }
-    
-    
-    
-    
-    
+   
     
 }

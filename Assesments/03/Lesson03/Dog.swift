@@ -19,4 +19,4 @@ class Dog: Animal {
 }
 
 
-// (?) could have overridden a variable "name" referred to that in the parent class method and redfined namr in subclass right? Instead of ovveriding a method to change a couple words.
+// (?) could have overridden a variable "name" referred to that in the parent class method and redfined namr in subclass right? Instead of overiding a method to change a couple words.
