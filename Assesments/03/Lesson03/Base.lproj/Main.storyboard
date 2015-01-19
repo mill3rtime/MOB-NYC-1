@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1t-AO-45K">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F1t-AO-45K">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
@@ -66,21 +66,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Screenshot 2015-01-17 19.16.13" translatesAutoresizingMaskIntoConstraints="NO" id="n5U-RC-95C">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Screenshot 2015-01-17 19.16.13" translatesAutoresizingMaskIntoConstraints="NO" id="n5U-RC-95C">
                                 <rect key="frame" x="0.0" y="44" width="616" height="556"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="942" id="bJy-Dc-pgJ"/>
-                                    <constraint firstAttribute="width" constant="765" id="wVg-bA-N9x"/>
-                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="F1t-AO-45K" firstAttribute="top" secondItem="a2R-g0-Bek" secondAttribute="top" id="1rS-E1-it1"/>
+                            <constraint firstItem="jE5-vE-NMO" firstAttribute="top" secondItem="n5U-RC-95C" secondAttribute="bottom" id="6yp-vM-JXn"/>
                             <constraint firstItem="F1t-AO-45K" firstAttribute="leading" secondItem="a2R-g0-Bek" secondAttribute="leading" id="C6x-sd-T9A"/>
+                            <constraint firstItem="n5U-RC-95C" firstAttribute="leading" secondItem="a2R-g0-Bek" secondAttribute="leadingMargin" id="PJQ-la-lDO"/>
                             <constraint firstAttribute="centerX" secondItem="gTC-HR-eNO" secondAttribute="centerX" id="Wma-hP-ZMN"/>
+                            <constraint firstItem="n5U-RC-95C" firstAttribute="top" secondItem="F1t-AO-45K" secondAttribute="bottom" id="aet-nG-5Z4"/>
                             <constraint firstAttribute="trailing" secondItem="F1t-AO-45K" secondAttribute="trailing" id="cXl-K6-A6Q"/>
                             <constraint firstItem="gTC-HR-eNO" firstAttribute="top" secondItem="a2R-g0-Bek" secondAttribute="topMargin" constant="20" id="tAi-fL-ZrF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n5U-RC-95C" secondAttribute="trailing" id="xoz-Zr-mTj"/>
                         </constraints>
                     </view>
                 </viewController>
