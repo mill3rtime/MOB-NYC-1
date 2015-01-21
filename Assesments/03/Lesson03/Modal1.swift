@@ -8,12 +8,22 @@
 
 import UIKit
 
+protocol ModalDismissed {
+    func modalDismissed()
+}
+
+
+
 class Modal1: UIViewController {
     
+
+    
+    var delegate: ModalDismissed?
     
     @IBAction func dismissModal1(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)
+        delegate?.modalDismissed()
     }
     
 }

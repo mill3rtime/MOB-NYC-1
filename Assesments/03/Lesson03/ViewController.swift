@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ModalDismissed {
 
     let defaultSwipeText = "Swipe Right for Modal"
     
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func swipeRight(sender: AnyObject) {
         performSegueWithIdentifier("Modal1Seg",sender: nil)
         
-        swipeArea.text = defaultSwipeText
+        swipeArea.text = defaultSwipeText    //Will the user be able to see this text change?
         
     }
     
@@ -38,6 +38,11 @@ class ViewController: UIViewController {
     @IBAction func displayTableView(sender: AnyObject) {
         performSegueWithIdentifier("TableSegue", sender:nil)
         
+    }
+    
+    
+    func modalDismissed() {
+        println("here")
     }
     
 }
