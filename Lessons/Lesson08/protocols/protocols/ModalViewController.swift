@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class ModalViewController: UIViewController {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+}
+

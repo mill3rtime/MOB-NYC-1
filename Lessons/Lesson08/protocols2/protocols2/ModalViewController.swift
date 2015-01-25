@@ -30,6 +30,13 @@ class ModalViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    
     */
+  
+    @IBOutlet weak var add: UIButton!
+    
+    @IBOutlet weak var textField: UITextField!
+    
+
 
 }

@@ -49,7 +49,7 @@ class MainTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = todos[indexPath.row]
+        cell.textLabel.text = todos[indexPath.row]
         return cell
     }
 
