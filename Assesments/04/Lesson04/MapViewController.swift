@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDelegate  {
-
-   
+class MapViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate  {
     
-   
+    
+    
+    
     var key: String?
     var value: String?
     
@@ -25,8 +25,8 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
     @IBOutlet weak var myTableView2: UITableView!
     
     
-     var arrayOfDicts = [[String:String]]()
-  
+    var arrayOfDicts = [[String:String]]()
+    
     
     override func viewDidLoad() {
         
@@ -40,15 +40,15 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
         
     }
     
-        /*
-        TODO three: Add TWO text views and a table view to this view controller, either using code or storybaord. Accept keyboard input from the two text views. When the 'return' button is pressed on the SECOND text view, add the text view data to a dictionary. The KEY in the dictionary should be the string in the first text view, the VALUE should be the second.
-        
-        
-        TODO four: Make this class a UITableViewDelegate and UITableViewDataSource that supply this table view with cells that correspond to the values in the dictionary. Each cell should print out a unique pair of key/value that the map contains. When a new key/value is inserted, the table view should display it.
-        
-        
-        TODO five: Make the background of the text boxes in this controller BLUE when the keyboard comes up, and RED when it goes down. Start with UIKeyboardWillShowNotification and NSNotificationCenter.
-        */
+    /*
+    TODO three: Add TWO text views and a table view to this view controller, either using code or storybaord. Accept keyboard input from the two text views. When the 'return' button is pressed on the SECOND text view, add the text view data to a dictionary. The KEY in the dictionary should be the string in the first text view, the VALUE should be the second.
+    
+    
+    TODO four: Make this class a UITableViewDelegate and UITableViewDataSource that supply this table view with cells that correspond to the values in the dictionary. Each cell should print out a unique pair of key/value that the map contains. When a new key/value is inserted, the table view should display it.
+    
+    
+    TODO five: Make the background of the text boxes in this controller BLUE when the keyboard comes up, and RED when it goes down. Start with UIKeyboardWillShowNotification and NSNotificationCenter.
+    */
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -59,7 +59,7 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
     // (?) whats up with: 'numberOfRowsInSection section Int'
     
     
-     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return arrayOfDicts.count
         
@@ -84,14 +84,10 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
         if let printKey = key {
             
             if let printValue = arrayOfDicts[row][printKey]{
-                
-                
-                
+
                 //Configure the cell
                 
                 cell.textLabel?.text = printKey + ", " + printValue
-                
-                
                 
             }
             
@@ -104,11 +100,11 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-       
+        
         
         if textField == keyTextField {
             valueTextField.becomeFirstResponder()  // moved focus to value text field
-           
+            
         }
         
         if keyTextField.text.isEmpty || valueTextField.text.isEmpty {
@@ -125,21 +121,20 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
             
             if let thisKey =  key {
                 if let thisValue =  value {
-
-            arrayOfDicts.append([thisKey:thisValue])
+                    
+                    arrayOfDicts.append([thisKey:thisValue])
                     
                     
-          
-                
                     
-            keyTextField.text = ""   // clear out text field
-            valueTextField.text = ""   // clear out text field
-            valueTextField.resignFirstResponder()  // moved focus to value text field
-            
+                    
+                    
+                    keyTextField.text = ""   // clear out text field
+                    valueTextField.text = ""   // clear out text field
+                    valueTextField.resignFirstResponder()  // moved focus to value text field
+                    
                     myTableView2.reloadData()
-                        
-                
-            
+
+                    
                 }
             }
         }
@@ -147,11 +142,11 @@ class MapViewController: UIViewController,UITableViewDataSource, UITextFieldDele
         return true
     }
     
+    
+    
+    
+    
+}
 
-    
-    
-
-    }
-    
 
 
