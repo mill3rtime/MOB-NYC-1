@@ -163,10 +163,7 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
             return true
         }
         
-        
-        
-        
-        
+  
     }
     
 

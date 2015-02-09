@@ -39,8 +39,7 @@ class ArrayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         TODO two: Make this class a UITableViewDelegate and UITableViewDataSource that supply the above table view with cells. These cells should correspond to the text entered into the text box. E.g. If the text "one", then "two", then "three" was entered into the text box, there should be three cells in this table view that contain those strings in order.
         
         */
-        
-    
+
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -50,9 +49,7 @@ class ArrayViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myArray.count
     }
-    
-    
-    
+
     // cellForRowAtIndexPath indexPath why both
     
     
@@ -64,7 +61,8 @@ class ArrayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         // get correponding entry from the array
-        let row = indexPath.row                     //index of a row in a given section, row of the section in your datasource
+        //index of a row in a given section, row of the section in your datasource
+        let row = indexPath.row
         
     
         let entry = myArray[row]
@@ -79,8 +77,6 @@ class ArrayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
         var userInput = textField.text
@@ -90,11 +86,7 @@ class ArrayViewController: UIViewController, UITableViewDelegate, UITableViewDat
         textField.resignFirstResponder()
         return true
     }
-    
-    
-    
-
-    
+ 
 
 }
 
