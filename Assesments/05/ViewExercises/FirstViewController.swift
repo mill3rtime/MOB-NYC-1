@@ -24,6 +24,11 @@ class FirstViewController: ExerciseViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: "next")
        
         
+        
+        
+        
+        
+        
         /* TODO:
         Create a red box (10px tall, the width of the screen) with a black border on the very top of the screen below the nav bar,
         and a black box with a red border on the very bottom of the screen (same dimensions), above the toolbar.
@@ -31,6 +36,10 @@ class FirstViewController: ExerciseViewController {
         Use Springs & Struts.
         
         Your view should be in self.exerciseView, not self.view
+        
+        
+        
+         MM TODO: max Y of nav bar
         */
         
         
@@ -42,10 +51,10 @@ class FirstViewController: ExerciseViewController {
         // (?) why do we need the ! here after navigationController?
         // (?) nav heigh is still above bar. I can add 15 and nothing happens
         
-        var navHeight =  self.navigationController!.navigationBar.frame.height
+       // var navYPos =  self.navigationController!.navigationBar.frame.maxY
         
         //(?) why doesn't this work?
-       // var toolHeight = ExerciseViewController.toolbar.view.frame.height
+        // var toolHeight = ExerciseViewController.toolbar.view.frame.height
         
         var toolHeight: CGFloat = (self.view.frame.height - 44)
     
@@ -53,24 +62,25 @@ class FirstViewController: ExerciseViewController {
         
         
         // (?) heights of nav and toolbar that I grab are 20 off? why?
-        var rect1 = CGRect(x: 0, y: navHeight + 20, width: screenWidth, height: 100)
+        var rect1 = CGRect(x: 0, y: navYPos, width: screenWidth, height: 100)
         var rect2 = CGRect(x: 0, y: toolHeight - 100, width: screenWidth, height: 100)
-        var topBorderRect = CGRect(x: 0, y: navHeight + 20, width: screenWidth, height: 5)
+        var topBorderRect = CGRect(x: 0, y: navYPos, width: screenWidth, height: 5)
         var bottomBorderRect = CGRect(x: 0, y: toolHeight - 5, width: screenWidth, height: 5)
     
         
         
         var redBox = UIView(frame: rect1)
         var blackBox = UIView(frame: rect2)
-        var topBorder = UIView(frame: topBorderRect)
-        var bottomBorder = UIView(frame: bottomBorderRect)
+//        var topBorder = UIView(frame: topBorderRect)
+//        var bottomBorder = UIView(frame: bottomBorderRect)
         
         
         
         redBox.backgroundColor = UIColor.redColor()
         blackBox.backgroundColor = UIColor.blackColor()
-        topBorder.backgroundColor = UIColor.blackColor()
-        bottomBorder.backgroundColor = UIColor.redColor()
+//        topBorder.backgroundColor = UIColor.blackColor()
+//        bottomBorder.backgroundColor = UIColor.redColor()
+        
         
         
         
@@ -78,23 +88,15 @@ class FirstViewController: ExerciseViewController {
         // (?) if I type one of these lines out verbatim it does not work
         self.exerciseView.addSubview(redBox)
         self.exerciseView.addSubview(blackBox)
-        self.exerciseView.addSubview(topBorder)
-        self.exerciseView.addSubview(bottomBorder)
+//        self.exerciseView.addSubview(topBorder)
+//        self.exerciseView.addSubview(bottomBorder)
 
         
+        redBox.layer.borderWidth = 2
+        redBox.layer.borderColor = UIColor.blackColor().CGColor
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        blackBox.layer.borderWidth = 2
+        blackBox.layer.borderColor = UIColor.redColor().CGColor
         
     }
     

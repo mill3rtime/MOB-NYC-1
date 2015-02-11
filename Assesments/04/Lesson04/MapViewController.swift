@@ -31,6 +31,10 @@ class MapViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         
+        // good practice to unregister when uou no longer need to receive, eg leave screen.
+        
+        // register each object differently
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)

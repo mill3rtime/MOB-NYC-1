@@ -11,9 +11,17 @@ import UIKit
 class ExerciseViewController: UIViewController {
     let exerciseView = UIView()
     let exerciseDescription = UILabel()
+    var navYPos: CGFloat = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let y = navigationController?.navigationBar.frame.maxY {
+        
+        navYPos = y
+            
+        }
         
         self.exerciseDescription.frame = self.view.frame
         self.exerciseDescription.numberOfLines = 0
