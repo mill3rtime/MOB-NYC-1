@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Smile
+//  CalculatorM
 //
-//  Created by Rudd Taylor on 2/4/15.
-//  Copyright (c) 2015 GA. All rights reserved.
+//  Created by Matt Miller on 2/11/15.
+//  Copyright (c) 2015 Matt. All rights reserved.
 //
 
 import UIKit

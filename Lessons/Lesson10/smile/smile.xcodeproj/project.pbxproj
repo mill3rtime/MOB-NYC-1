@@ -7,46 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4CA875E1A82E90A00150214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CA875D1A82E90A00150214 /* AppDelegate.swift */; };
-		D4CA87601A82E90A00150214 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CA875F1A82E90A00150214 /* ViewController.swift */; };
-		D4CA87631A82E90A00150214 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4CA87611A82E90A00150214 /* Main.storyboard */; };
-		D4CA87651A82E90A00150214 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CA87641A82E90A00150214 /* Images.xcassets */; };
-		D4CA87681A82E90A00150214 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4CA87661A82E90A00150214 /* LaunchScreen.xib */; };
-		D4CA87741A82E90A00150214 /* smileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CA87731A82E90A00150214 /* smileTests.swift */; };
+		5D24100F1A82E8FA002FB874 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D24100E1A82E8FA002FB874 /* AppDelegate.swift */; };
+		5D2410111A82E8FA002FB874 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2410101A82E8FA002FB874 /* ViewController.swift */; };
+		5D2410141A82E8FA002FB874 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D2410121A82E8FA002FB874 /* Main.storyboard */; };
+		5D2410161A82E8FA002FB874 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D2410151A82E8FA002FB874 /* Images.xcassets */; };
+		5D2410191A82E8FA002FB874 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2410171A82E8FA002FB874 /* LaunchScreen.xib */; };
+		5D2410251A82E8FA002FB874 /* SmileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2410241A82E8FA002FB874 /* SmileTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D4CA876E1A82E90A00150214 /* PBXContainerItemProxy */ = {
+		5D24101F1A82E8FA002FB874 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D4CA87501A82E90A00150214 /* Project object */;
+			containerPortal = 5D2410011A82E8FA002FB874 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D4CA87571A82E90A00150214;
-			remoteInfo = smile;
+			remoteGlobalIDString = 5D2410081A82E8FA002FB874;
+			remoteInfo = Smile;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D4CA87581A82E90A00150214 /* smile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4CA875C1A82E90A00150214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4CA875D1A82E90A00150214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D4CA875F1A82E90A00150214 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D4CA87621A82E90A00150214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4CA87641A82E90A00150214 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D4CA87671A82E90A00150214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D4CA876D1A82E90A00150214 /* smileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = smileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4CA87721A82E90A00150214 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4CA87731A82E90A00150214 /* smileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smileTests.swift; sourceTree = "<group>"; };
+		5D2410091A82E8FA002FB874 /* Smile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D24100D1A82E8FA002FB874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D24100E1A82E8FA002FB874 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D2410101A82E8FA002FB874 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D2410131A82E8FA002FB874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D2410151A82E8FA002FB874 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5D2410181A82E8FA002FB874 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5D24101E1A82E8FA002FB874 /* SmileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2410231A82E8FA002FB874 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D2410241A82E8FA002FB874 /* SmileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmileTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D4CA87551A82E90A00150214 /* Frameworks */ = {
+		5D2410061A82E8FA002FB874 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4CA876A1A82E90A00150214 /* Frameworks */ = {
+		5D24101B1A82E8FA002FB874 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,58 +56,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D4CA874F1A82E90A00150214 = {
+		5D2410001A82E8FA002FB874 = {
 			isa = PBXGroup;
 			children = (
-				D4CA875A1A82E90A00150214 /* smile */,
-				D4CA87701A82E90A00150214 /* smileTests */,
-				D4CA87591A82E90A00150214 /* Products */,
+				5D24100B1A82E8FA002FB874 /* Smile */,
+				5D2410211A82E8FA002FB874 /* SmileTests */,
+				5D24100A1A82E8FA002FB874 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D4CA87591A82E90A00150214 /* Products */ = {
+		5D24100A1A82E8FA002FB874 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA87581A82E90A00150214 /* smile.app */,
-				D4CA876D1A82E90A00150214 /* smileTests.xctest */,
+				5D2410091A82E8FA002FB874 /* Smile.app */,
+				5D24101E1A82E8FA002FB874 /* SmileTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D4CA875A1A82E90A00150214 /* smile */ = {
+		5D24100B1A82E8FA002FB874 /* Smile */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA875D1A82E90A00150214 /* AppDelegate.swift */,
-				D4CA875F1A82E90A00150214 /* ViewController.swift */,
-				D4CA87611A82E90A00150214 /* Main.storyboard */,
-				D4CA87641A82E90A00150214 /* Images.xcassets */,
-				D4CA87661A82E90A00150214 /* LaunchScreen.xib */,
-				D4CA875B1A82E90A00150214 /* Supporting Files */,
+				5D24100E1A82E8FA002FB874 /* AppDelegate.swift */,
+				5D2410101A82E8FA002FB874 /* ViewController.swift */,
+				5D2410121A82E8FA002FB874 /* Main.storyboard */,
+				5D2410151A82E8FA002FB874 /* Images.xcassets */,
+				5D2410171A82E8FA002FB874 /* LaunchScreen.xib */,
+				5D24100C1A82E8FA002FB874 /* Supporting Files */,
 			);
-			path = smile;
+			path = Smile;
 			sourceTree = "<group>";
 		};
-		D4CA875B1A82E90A00150214 /* Supporting Files */ = {
+		5D24100C1A82E8FA002FB874 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA875C1A82E90A00150214 /* Info.plist */,
+				5D24100D1A82E8FA002FB874 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D4CA87701A82E90A00150214 /* smileTests */ = {
+		5D2410211A82E8FA002FB874 /* SmileTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA87731A82E90A00150214 /* smileTests.swift */,
-				D4CA87711A82E90A00150214 /* Supporting Files */,
+				5D2410241A82E8FA002FB874 /* SmileTests.swift */,
+				5D2410221A82E8FA002FB874 /* Supporting Files */,
 			);
-			path = smileTests;
+			path = SmileTests;
 			sourceTree = "<group>";
 		};
-		D4CA87711A82E90A00150214 /* Supporting Files */ = {
+		5D2410221A82E8FA002FB874 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA87721A82E90A00150214 /* Info.plist */,
+				5D2410231A82E8FA002FB874 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,60 +115,60 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D4CA87571A82E90A00150214 /* smile */ = {
+		5D2410081A82E8FA002FB874 /* Smile */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4CA87771A82E90A00150214 /* Build configuration list for PBXNativeTarget "smile" */;
+			buildConfigurationList = 5D2410281A82E8FA002FB874 /* Build configuration list for PBXNativeTarget "Smile" */;
 			buildPhases = (
-				D4CA87541A82E90A00150214 /* Sources */,
-				D4CA87551A82E90A00150214 /* Frameworks */,
-				D4CA87561A82E90A00150214 /* Resources */,
+				5D2410051A82E8FA002FB874 /* Sources */,
+				5D2410061A82E8FA002FB874 /* Frameworks */,
+				5D2410071A82E8FA002FB874 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = smile;
-			productName = smile;
-			productReference = D4CA87581A82E90A00150214 /* smile.app */;
+			name = Smile;
+			productName = Smile;
+			productReference = 5D2410091A82E8FA002FB874 /* Smile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D4CA876C1A82E90A00150214 /* smileTests */ = {
+		5D24101D1A82E8FA002FB874 /* SmileTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4CA877A1A82E90A00150214 /* Build configuration list for PBXNativeTarget "smileTests" */;
+			buildConfigurationList = 5D24102B1A82E8FA002FB874 /* Build configuration list for PBXNativeTarget "SmileTests" */;
 			buildPhases = (
-				D4CA87691A82E90A00150214 /* Sources */,
-				D4CA876A1A82E90A00150214 /* Frameworks */,
-				D4CA876B1A82E90A00150214 /* Resources */,
+				5D24101A1A82E8FA002FB874 /* Sources */,
+				5D24101B1A82E8FA002FB874 /* Frameworks */,
+				5D24101C1A82E8FA002FB874 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D4CA876F1A82E90A00150214 /* PBXTargetDependency */,
+				5D2410201A82E8FA002FB874 /* PBXTargetDependency */,
 			);
-			name = smileTests;
-			productName = smileTests;
-			productReference = D4CA876D1A82E90A00150214 /* smileTests.xctest */;
+			name = SmileTests;
+			productName = SmileTests;
+			productReference = 5D24101E1A82E8FA002FB874 /* SmileTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D4CA87501A82E90A00150214 /* Project object */ = {
+		5D2410011A82E8FA002FB874 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = Matt;
+				ORGANIZATIONNAME = GA;
 				TargetAttributes = {
-					D4CA87571A82E90A00150214 = {
+					5D2410081A82E8FA002FB874 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					D4CA876C1A82E90A00150214 = {
+					5D24101D1A82E8FA002FB874 = {
 						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = D4CA87571A82E90A00150214;
+						TestTargetID = 5D2410081A82E8FA002FB874;
 					};
 				};
 			};
-			buildConfigurationList = D4CA87531A82E90A00150214 /* Build configuration list for PBXProject "smile" */;
+			buildConfigurationList = 5D2410041A82E8FA002FB874 /* Build configuration list for PBXProject "Smile" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -176,29 +176,29 @@
 				en,
 				Base,
 			);
-			mainGroup = D4CA874F1A82E90A00150214;
-			productRefGroup = D4CA87591A82E90A00150214 /* Products */;
+			mainGroup = 5D2410001A82E8FA002FB874;
+			productRefGroup = 5D24100A1A82E8FA002FB874 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4CA87571A82E90A00150214 /* smile */,
-				D4CA876C1A82E90A00150214 /* smileTests */,
+				5D2410081A82E8FA002FB874 /* Smile */,
+				5D24101D1A82E8FA002FB874 /* SmileTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D4CA87561A82E90A00150214 /* Resources */ = {
+		5D2410071A82E8FA002FB874 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4CA87631A82E90A00150214 /* Main.storyboard in Resources */,
-				D4CA87681A82E90A00150214 /* LaunchScreen.xib in Resources */,
-				D4CA87651A82E90A00150214 /* Images.xcassets in Resources */,
+				5D2410141A82E8FA002FB874 /* Main.storyboard in Resources */,
+				5D2410191A82E8FA002FB874 /* LaunchScreen.xib in Resources */,
+				5D2410161A82E8FA002FB874 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4CA876B1A82E90A00150214 /* Resources */ = {
+		5D24101C1A82E8FA002FB874 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -208,46 +208,46 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D4CA87541A82E90A00150214 /* Sources */ = {
+		5D2410051A82E8FA002FB874 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4CA87601A82E90A00150214 /* ViewController.swift in Sources */,
-				D4CA875E1A82E90A00150214 /* AppDelegate.swift in Sources */,
+				5D2410111A82E8FA002FB874 /* ViewController.swift in Sources */,
+				5D24100F1A82E8FA002FB874 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4CA87691A82E90A00150214 /* Sources */ = {
+		5D24101A1A82E8FA002FB874 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4CA87741A82E90A00150214 /* smileTests.swift in Sources */,
+				5D2410251A82E8FA002FB874 /* SmileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D4CA876F1A82E90A00150214 /* PBXTargetDependency */ = {
+		5D2410201A82E8FA002FB874 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D4CA87571A82E90A00150214 /* smile */;
-			targetProxy = D4CA876E1A82E90A00150214 /* PBXContainerItemProxy */;
+			target = 5D2410081A82E8FA002FB874 /* Smile */;
+			targetProxy = 5D24101F1A82E8FA002FB874 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D4CA87611A82E90A00150214 /* Main.storyboard */ = {
+		5D2410121A82E8FA002FB874 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4CA87621A82E90A00150214 /* Base */,
+				5D2410131A82E8FA002FB874 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D4CA87661A82E90A00150214 /* LaunchScreen.xib */ = {
+		5D2410171A82E8FA002FB874 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4CA87671A82E90A00150214 /* Base */,
+				5D2410181A82E8FA002FB874 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D4CA87751A82E90A00150214 /* Debug */ = {
+		5D2410261A82E8FA002FB874 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -297,7 +297,7 @@
 			};
 			name = Debug;
 		};
-		D4CA87761A82E90A00150214 /* Release */ = {
+		5D2410271A82E8FA002FB874 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -332,27 +332,27 @@
 			};
 			name = Release;
 		};
-		D4CA87781A82E90A00150214 /* Debug */ = {
+		5D2410291A82E8FA002FB874 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = smile/Info.plist;
+				INFOPLIST_FILE = Smile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		D4CA87791A82E90A00150214 /* Release */ = {
+		5D24102A1A82E8FA002FB874 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = smile/Info.plist;
+				INFOPLIST_FILE = Smile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		D4CA877B1A82E90A00150214 /* Debug */ = {
+		5D24102C1A82E8FA002FB874 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -364,14 +364,14 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = smileTests/Info.plist;
+				INFOPLIST_FILE = SmileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smile.app/smile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile.app/Smile";
 			};
 			name = Debug;
 		};
-		D4CA877C1A82E90A00150214 /* Release */ = {
+		5D24102D1A82E8FA002FB874 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -379,42 +379,42 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = smileTests/Info.plist;
+				INFOPLIST_FILE = SmileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/smile.app/smile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smile.app/Smile";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D4CA87531A82E90A00150214 /* Build configuration list for PBXProject "smile" */ = {
+		5D2410041A82E8FA002FB874 /* Build configuration list for PBXProject "Smile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4CA87751A82E90A00150214 /* Debug */,
-				D4CA87761A82E90A00150214 /* Release */,
+				5D2410261A82E8FA002FB874 /* Debug */,
+				5D2410271A82E8FA002FB874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4CA87771A82E90A00150214 /* Build configuration list for PBXNativeTarget "smile" */ = {
+		5D2410281A82E8FA002FB874 /* Build configuration list for PBXNativeTarget "Smile" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4CA87781A82E90A00150214 /* Debug */,
-				D4CA87791A82E90A00150214 /* Release */,
+				5D2410291A82E8FA002FB874 /* Debug */,
+				5D24102A1A82E8FA002FB874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		D4CA877A1A82E90A00150214 /* Build configuration list for PBXNativeTarget "smileTests" */ = {
+		5D24102B1A82E8FA002FB874 /* Build configuration list for PBXNativeTarget "SmileTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4CA877B1A82E90A00150214 /* Debug */,
-				D4CA877C1A82E90A00150214 /* Release */,
+				5D24102C1A82E8FA002FB874 /* Debug */,
+				5D24102D1A82E8FA002FB874 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D4CA87501A82E90A00150214 /* Project object */;
+	rootObject = 5D2410011A82E8FA002FB874 /* Project object */;
 }

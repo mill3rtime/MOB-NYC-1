@@ -9,11 +9,24 @@
 import UIKit
 
 class ThirdViewController: ExerciseViewController {
+    
+    
+    //(?)for view in....
+    
+//    for view in [tl, tr, br, bl] {
+//    var view = UIView()
+//    
+//    }
+//
+//    
 
+    var size: CGFloat = 20
+    let myColor = UIColor.blueColor()
     
-    //for view in....
     var tl = UIView()
-    
+    var tr = UIView()
+    var bl = UIView()
+    var br = UIView()
     
     
     override func viewDidLoad() {
@@ -22,13 +35,17 @@ class ThirdViewController: ExerciseViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .Plain, target: self, action: "next")
         
         
+        
+        
         autolayout()
     }
     
     func autolayout() {
+        
+        //tl layout
 
         
-        tl.backgroundColor = UIColor.blueColor()
+        tl.backgroundColor = myColor
         
         tl.setTranslatesAutoresizingMaskIntoConstraints(false)
         
@@ -48,8 +65,8 @@ class ThirdViewController: ExerciseViewController {
             item: tl,
             attribute: .Top,
             relatedBy: .Equal,
-            toItem: self.navigationController?.bottomLayoutGuide,
-            attribute: .Bottom,
+            toItem: exerciseView,
+            attribute: .Top,
             multiplier: 1.0,
             constant: navYPos
             ))
@@ -61,7 +78,7 @@ class ThirdViewController: ExerciseViewController {
             toItem: nil,
             attribute: NSLayoutAttribute.NotAnAttribute,
             multiplier: 1.0,
-            constant: 50)
+            constant: size)
         )
         
         exerciseView.addConstraint(NSLayoutConstraint(
@@ -71,8 +88,165 @@ class ThirdViewController: ExerciseViewController {
             toItem: nil,
             attribute: NSLayoutAttribute.NotAnAttribute,
             multiplier: 1.0,
-            constant: 50)
+            constant: size)
         )
+        
+        
+        
+        // tr layout
+        
+        tr.backgroundColor = myColor
+        
+        tr.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        exerciseView.addSubview(tr)
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: tr,
+            attribute: NSLayoutAttribute.Right,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: exerciseView,
+            attribute: NSLayoutAttribute.Right,
+            multiplier: 1,
+            constant: 0
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: tr,
+            attribute: .Top,
+            relatedBy: .Equal,
+            toItem: exerciseView,
+            attribute: .Top,
+            multiplier: 1.0,
+            constant: navYPos
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: tr,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: tr,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        
+        // bl layout
+        
+        bl.backgroundColor = myColor
+        
+        bl.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        exerciseView.addSubview(bl)
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: bl,
+            attribute: NSLayoutAttribute.Left,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: exerciseView,
+            attribute: NSLayoutAttribute.Left,
+            multiplier: 1,
+            constant: 0
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: bl,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: exerciseView,
+            attribute: .Bottom,
+            multiplier: 1.0,
+            constant: -44
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: bl,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: bl,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        
+        
+        
+        
+        // br layout
+        
+        br.backgroundColor = myColor
+        
+        br.setTranslatesAutoresizingMaskIntoConstraints(false)
+        
+        exerciseView.addSubview(br)
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: br,
+            attribute: NSLayoutAttribute.Right,
+            relatedBy: NSLayoutRelation.Equal,
+            toItem: exerciseView,
+            attribute: NSLayoutAttribute.Right,
+            multiplier: 1,
+            constant: 0
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: br,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: exerciseView,
+            attribute: .Bottom,
+            multiplier: 1.0,
+            constant: -44
+            ))
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: br,
+            attribute: .Width,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        exerciseView.addConstraint(NSLayoutConstraint(
+            item: br,
+            attribute: .Height,
+            relatedBy: .Equal,
+            toItem: nil,
+            attribute: NSLayoutAttribute.NotAnAttribute,
+            multiplier: 1.0,
+            constant: size)
+        )
+        
+        
+        
+    
+        
+        
 //        
 //
 //        1. create the views before you postion them

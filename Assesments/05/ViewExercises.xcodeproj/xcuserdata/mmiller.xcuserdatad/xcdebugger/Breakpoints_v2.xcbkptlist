@@ -19,5 +19,123 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewExercises/ThirdViewController.swift"
+            timestampString = "445310740.294863"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "ThirdViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.tl.getter : ObjectiveC.UIView"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.299842"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.tl.setter : ObjectiveC.UIView"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.300032"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.tl.materializeForSet : ObjectiveC.UIView"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.300129"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.init (ViewExercises.ThirdViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; ViewExercises.ThirdViewController"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.300226"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.init (ViewExercises.ThirdViewController.Type)() -&gt; ViewExercises.ThirdViewController"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.300316"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ViewExercises.ThirdViewController.init (ViewExercises.ThirdViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ViewExercises.ThirdViewController"
+                  moduleName = "ViewExercises"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/05/ViewExercises/ThirdViewController.swift"
+                  timestampString = "445310740.300403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewExercises/ThirdViewController.swift"
+            timestampString = "445311658.910052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "ThirdViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
