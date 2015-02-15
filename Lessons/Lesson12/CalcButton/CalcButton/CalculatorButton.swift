@@ -8,14 +8,15 @@
 
 import UIKit
 
+
 class CalculatorButton: UIButton {
+    
     var label: UILabel = UILabel()
     var highlightedColor: UIColor?
     var originalBackgroundColor: UIColor?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
     }
    
     required init(coder aDecoder: NSCoder) {
@@ -46,6 +47,7 @@ class CalculatorButton: UIButton {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.originalBackgroundColor = self.backgroundColor
         self.backgroundColor = highlightedColor
+        var tapGesture = UITapGestureRecognizer(target: ViewController(), action: "buttonTap")
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {

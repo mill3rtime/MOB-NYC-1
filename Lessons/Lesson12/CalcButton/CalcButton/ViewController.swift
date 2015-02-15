@@ -17,6 +17,10 @@ class ViewController: UIViewController {
         self.button.backgroundColor = UIColor(red: 200/255.0, green: 0, blue: 23/255.0, alpha: 1.0)
         self.button.highlightedColor = UIColor.blueColor()
         self.button.label.text = "1"
+        
+        var x = "sdgsfg"
+        
+        println("hello this \(x) is just random")
     }
 
     override func didReceiveMemoryWarning() {
