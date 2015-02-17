@@ -11,6 +11,12 @@ import Foundation
 
 class Calculator: NSObject {
     
+    
+
+    //(?!) how to pass a parameter into a func to se a local variable
+    
+   var calcyArray = [String]()
+    
 
     func compute(num1: String, inputOperator: String, num2: String) -> String {
         

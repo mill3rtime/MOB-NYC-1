@@ -17,35 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVO-tz-lnS" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVO-tz-lnS">
                                 <rect key="frame" x="16" y="132" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120017299" green="1" blue="0.7129729642888305" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSN-k3-A3Q" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QSN-k3-A3Q">
                                 <rect key="frame" x="102" y="132" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-8d-MhH" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nMd-8d-MhH">
                                 <rect key="frame" x="188" y="132" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-Cy-82Y" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAw-Cy-82Y">
                                 <rect key="frame" x="274" y="132" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0c-0O-Xik" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y0c-0O-Xik">
                                 <rect key="frame" x="16" y="218" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-jL-YNg" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-jL-YNg">
                                 <rect key="frame" x="102" y="218" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIt-RZ-R5N" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIt-RZ-R5N">
                                 <rect key="frame" x="188" y="218" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-qV-Ref" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRJ-qV-Ref">
                                 <rect key="frame" x="274" y="218" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -53,15 +53,15 @@
                                 <rect key="frame" x="16" y="304" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzF-ga-HmM" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kzF-ga-HmM">
                                 <rect key="frame" x="102" y="304" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sim-7t-YiN" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sim-7t-YiN">
                                 <rect key="frame" x="188" y="304" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCX-IN-45M" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCX-IN-45M">
                                 <rect key="frame" x="274" y="304" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -92,15 +92,15 @@
                                     <action selector="tapPlus:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oRR-0g-Y7t"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XES-Mc-NEG" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XES-Mc-NEG">
                                 <rect key="frame" x="16" y="476" width="164" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orb-bC-poi" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orb-bC-poi">
                                 <rect key="frame" x="188" y="476" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUv-AH-vA9" customClass="CalcButton" customModule="CalculatorM" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUv-AH-vA9">
                                 <rect key="frame" x="274" y="476" width="78" height="78"/>
                                 <color key="backgroundColor" red="0.78622190120000002" green="1" blue="0.71297296430000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -212,23 +212,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="clear" destination="TUv-AH-vA9" id="oIW-2C-wcO"/>
-                        <outlet property="divide" destination="sAw-Cy-82Y" id="7PL-4Y-BCW"/>
-                        <outlet property="eight" destination="K3q-jL-YNg" id="k8O-Cd-Xs8"/>
-                        <outlet property="five" destination="kzF-ga-HmM" id="e8P-Yv-UCX"/>
-                        <outlet property="four" destination="RQC-yh-1Ac" id="dHg-Mb-IPR"/>
-                        <outlet property="minus" destination="gCX-IN-45M" id="o45-26-Elu"/>
-                        <outlet property="multiply" destination="YRJ-qV-Ref" id="mP4-3N-Dam"/>
-                        <outlet property="nine" destination="mIt-RZ-R5N" id="Io9-7a-FUL"/>
                         <outlet property="one" destination="g99-Y7-PUG" id="h5n-Ao-q0z"/>
                         <outlet property="plus" destination="lh6-ib-axK" id="cfp-kj-rQ4"/>
-                        <outlet property="point" destination="orb-bC-poi" id="wME-Vx-jiw"/>
-                        <outlet property="screen" destination="lyM-u0-YWa" id="sm6-JU-r36"/>
-                        <outlet property="seven" destination="y0c-0O-Xik" id="4fu-5F-75g"/>
-                        <outlet property="six" destination="sim-7t-YiN" id="4ts-qm-Vku"/>
                         <outlet property="three" destination="wdP-as-EFe" id="OFc-iI-d4Z"/>
                         <outlet property="two" destination="or0-ce-kcj" id="ed2-Eh-bVg"/>
-                        <outlet property="zero" destination="XES-Mc-NEG" id="W3C-gF-Lgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
