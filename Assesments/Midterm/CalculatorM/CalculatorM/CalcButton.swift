@@ -21,7 +21,7 @@ protocol CalcButtonDelegate {
 // CHINESE STARTS HERE
 class CalcButton: UIButton {
     
-    let numerals = ["0","1","2","3","4","5","6","7","8","9"]
+    let numerals = ["0","1","2","3","4","5","6","7","8","9","."]
     
     enum Kind {
         case CalcNumber
@@ -32,7 +32,6 @@ class CalcButton: UIButton {
     var origColor = UIColor.purpleColor()
     var tapColor:UIColor?
     var buttonColor = UIColor.purpleColor()
-    var valueArray = [String]()
     var prevTapIsOp = false
     var total:Float = 0
     var delegate: CalcButtonDelegate?
@@ -60,7 +59,8 @@ class CalcButton: UIButton {
             }
         }
         
-        self.kind = Kind.CalcOperator    }
+        self.kind = Kind.CalcOperator
+    }
     
     
 
@@ -117,9 +117,14 @@ class CalcButton: UIButton {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        println("sdfdf")
+        
+        
+        
+        println("tapped")
         delegate?.calcButtonPressed(self)
     }
+    
+    
     
     
     
