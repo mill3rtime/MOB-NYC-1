@@ -41,7 +41,7 @@ class Calculator: NSObject {
         
         else if oper == "/" {
             
-            total = thisNum1 - thisNum2
+            total = thisNum1 / thisNum2
             
         }
         

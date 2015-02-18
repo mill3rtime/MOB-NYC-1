@@ -18,7 +18,7 @@ protocol CalcButtonDelegate {
     func calcButtonPressed(button: CalcButton)
 }
 
-// CHINESE STARTS HERE
+// ??? STARTS HERE
 class CalcButton: UIButton {
     
     let numerals = ["0","1","2","3","4","5","6","7","8","9","."]
@@ -126,29 +126,7 @@ class CalcButton: UIButton {
     
     
     
-    
-    
-    
-    //        var tapGesture = UITapGestureRecognizer(target: ViewController.self, action: "buttonTap")
-    //
-    //
-    //                var tapGesture = UITapGestureRecognizer(target: ViewController(), action: "gotTapped")
-    //
-    //        self.addGestureRecognizer(tapGesture)
-    
-    
+
 }
-
-
-
-
-//        NSNotificationCenter.defaultCenter().addObserver(ViewController.self(, selector: "buttonTapped", name: nil)
-
-//        var tapGesture = UITapGestureRecognizer(target: ViewController(), action: "buttonTap")
-//        self.addGestureRecognizer(tapGesture)
-
-
-
-//TAP IT
 
 

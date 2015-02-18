@@ -5,6 +5,10 @@
 //  Created by Matt Miller on 2/11/15.
 //  Copyright (c) 2015 Matt. All rights reserved.
 //
+//(?!) presuming .delegate? other delegates?
+//(?!) label for display was total nightmare with interface builder / white couldnt see it :(
+
+
 
 import UIKit
 import Foundation
@@ -22,12 +26,14 @@ class ViewController: UIViewController, CalcButtonDelegate {
     var position = 1          //  1,2, or 3 could be enum. track progress on calculation
     var numButtonArray = [CalcButton]()
     var operatorButtonArray = [CalcButton]()
-    var operatorButtonValues = ["%","*","-","+","="]
+    var operatorButtonValues = ["/","*","-","+","="]
+    var specialButtonArray = [CalcButton]()
+    var specialButtonValues = ["C","+/-","%"]
     var firstSelectionIsOperator = true
     var total = "0"
-
+    
     var coolGreen = UIColor(red: 85/255, green: 234/255, blue: 188/255, alpha: 1.0)
-    var cDisplay = "0"
+    
     
     
     
@@ -42,24 +48,6 @@ class ViewController: UIViewController, CalcButtonDelegate {
         
         prevTapIsOp = true
     }
-
-    
-    
-    
-    
-    // OUTLETS FOR BUTTONS
-    // TODO: user label value and unwrap later
-    // TODO: user enum kind later
-    
-
-    //uncom
-   
-
-   
-//        
-//    @IBAction func tapButton(button: CalcButton) {
-//
-//    }
     
     
     // receives protocol action
@@ -67,18 +55,19 @@ class ViewController: UIViewController, CalcButtonDelegate {
         let kind = button.kind
         if let name = button.titleLabel?.text {
             setCalcValues(name, kind: kind)
+            
         }
     }
-
     
-   // HALLO THESE ARE MY OUTLETZ
+    
+    // HALLO THESE ARE MY OUTLETZ
     
     @IBOutlet weak var zero: CalcButton!
     
     @IBOutlet weak var one: CalcButton!
     
     @IBOutlet weak var two: CalcButton!
-
+    
     @IBOutlet weak var three: CalcButton!
     
     @IBOutlet weak var four: CalcButton!
@@ -90,9 +79,9 @@ class ViewController: UIViewController, CalcButtonDelegate {
     @IBOutlet weak var seven: CalcButton!
     
     @IBOutlet weak var eight: CalcButton!
-
+    
     @IBOutlet weak var nine: CalcButton!
-   
+    
     @IBOutlet weak var divide: CalcButton!
     
     @IBOutlet weak var multiply: CalcButton!
@@ -100,8 +89,12 @@ class ViewController: UIViewController, CalcButtonDelegate {
     @IBOutlet weak var minus: CalcButton!
     
     @IBOutlet weak var plus: CalcButton!
-
+    
     @IBOutlet weak var clear: CalcButton!
+    
+    @IBOutlet weak var negative: CalcButton!
+    
+    @IBOutlet weak var percent: CalcButton!
     
     @IBOutlet weak var point: CalcButton!
     
@@ -109,25 +102,71 @@ class ViewController: UIViewController, CalcButtonDelegate {
     
     @IBOutlet weak var screen: UIView!
     
-    
-
     @IBOutlet weak var screenNumber: UILabel!
     
     
-
+    
+    
     override func viewDidLoad() {
-          super.viewDidLoad()
+        super.viewDidLoad()
         
-       
         
-        numButtonArray = [zero,one,two,three,four,five,six,seven,eight,nine]
         
-        operatorButtonArray = [divide,multiply,minus,plus,equals]
+        numButtonArray = [zero,one,two,three,four,five,six,seven,eight,nine,point]
         
+        operatorButtonArray = [divide,multiply,minus,plus,equals, point]
+        
+        specialButtonArray = [clear,negative,percent]
+        
+        
+        
+        //BUTTON COLORS
         
         for var i = 0; i < operatorButtonArray.count; ++i {
             operatorButtonArray[i].backgroundColor = UIColor.grayColor()
         }
+        
+        
+        for var i = 0; i < numButtonArray.count; ++i {
+            numButtonArray[i].backgroundColor = coolGreen
+            
+        }
+        
+        
+        for var i = 0; i < specialButtonArray.count; ++i {
+            specialButtonArray[i].backgroundColor = UIColor.darkGrayColor()
+            
+        }
+        
+        screen.backgroundColor = UIColor.blackColor()
+        
+        // set name and type of num buttons
+        for var i = 0; i < numButtonArray.count; ++i {
+            
+            numButtonArray[i].setName(toString(i))
+        }
+        
+        //set name and type of operator buttons
+        for var i = 0; i < operatorButtonArray.count - 1; ++i{ // -1 for point button
+            
+            operatorButtonArray[i].setName(operatorButtonValues[i])
+            
+        }
+        
+        point.setName(".")
+        
+        
+        for var i = 0; i < specialButtonArray.count; i++ {
+            
+            specialButtonArray[i].setName(specialButtonValues[i])
+            
+        }
+        
+        
+        
+        
+        
+        // make buttons delegates of CalcButton so they receive tap events
         
         for var i = 0; i < operatorButtonArray.count; ++i {
             operatorButtonArray[i].delegate = self
@@ -139,45 +178,12 @@ class ViewController: UIViewController, CalcButtonDelegate {
         }
         
         
-        //FOR REFERENCE
-//        func setName(name: String) {
-//            self.setTitle(name, forState: UIControlState.Normal)
-//            for numeral in numerals {
-//                if numeral == name {
-//                    //kind should be number
-//                    self.kind = Kind.CalcNumber
-//                    return
-//                }
-//            }
-//            
-//            self.kind = Kind.CalcOperator
-//        }
-        
-        
-        //set all number button colors
-        for var i = 0; i < numButtonArray.count; ++i {
-            numButtonArray[i].backgroundColor = coolGreen
-            
+        for var i = 0; i < specialButtonArray.count; ++i {
+            specialButtonArray[i].delegate = self
         }
         
         
-        
-        // set name and type of num buttons
-        for var i = 0, j = 0; i < numButtonArray.count; ++i, ++j {
-            
-            numButtonArray[i].setName(toString(j))
-        }
-        
-        //set name and type of operator buttons
-        for var i = 0, j = 0; i < operatorButtonArray.count; ++i, ++j {
-            
-            operatorButtonArray[i].setName(operatorButtonValues[j])
-            
-        }
-        
-        point.setName(".")
-        point.delegate = self
-           
+        // add the label to the screen 
         
         screen.addSubview(screenNumber)
         screenNumber.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -196,10 +202,10 @@ class ViewController: UIViewController, CalcButtonDelegate {
             attribute: .CenterY,
             multiplier: 1,
             constant: 0))
-     
+        
         
         screenNumber.textAlignment = .Left
-        screenNumber.textColor = UIColor.darkGrayColor()
+        screenNumber.textColor = UIColor.whiteColor()
         setDisplay("0")
         
         
@@ -210,7 +216,12 @@ class ViewController: UIViewController, CalcButtonDelegate {
     
     func setDisplay (putOnScreen: String) {
         
-        screenNumber.text = putOnScreen
+        //UNDO when you fix negatives
+        
+        
+//        screenNumber.text = toString((putOnScreen as NSString).floatValue) // in case of leading zeros
+        
+        screenNumber.text = toString(putOnScreen)
         
     }
     
@@ -226,39 +237,126 @@ class ViewController: UIViewController, CalcButtonDelegate {
     
     
     
-
-   
+    
+    
     func alreadyHitDecimal(label: String) ->Bool {
         
+        if let decimal =  point.titleLabel?.text {
+            
+            if num1.rangeOfString(decimal) != nil && position == 1 && label == decimal {
+                
+                println("thats two decimals bro")
+                return true
+                
+            }
+            
+            if num2.rangeOfString(decimal) != nil && position == 3 && label == decimal {
+                
+                println("thats two decimals bro")
+                return true
+                
+            }
+            
+            
+        }
         
-        if num1.rangeOfString(".") != nil && position == 1 && label == "." {
-            
-            println("thats two decimals bro")
-            return true
-            
-        }
-     
-        if num2.rangeOfString(".") != nil && position == 3 && label == "." {
-            
-            println("thats two decimals bro")
-            return true
-            
-        }
         
         return false
+    }
+    
+    
+    func clearValues() {
         
+        num1 = ""
+        num2 = ""
+        total = ""
+        oper = ""
+        position = 1
+        prevTapIsOp = false
+        setDisplay("0")
+        
+        
+    }
+    
+    func negate() {
+        
+  
+        if position == 1 {
+            
+            if num1 == "0" {
+                num1 = ("-\(num1)")
+                return
+            }
+            
+            else if num1 == "-0" {
+                num1 = ("0")
+                return
+            }
+            
+            num1 = toString((num1 as NSString).floatValue * -1)
+            setDisplay(num1)
         }
+        
+        else if position == 2 {
+            
+            if num2 == "0" {
+                num2 = ("-\(num2)")
+                return
+            }
+            
+            else if num2 == "-0" {
+                num2 = ("0")
+                return
+            }
+            
+            num2 = toString((num2 as NSString).floatValue * -1)
+            setDisplay(num2)
+        }
+            
+            
+    }
+    
 
 
     
     
-    ////////////////// BUTTON PRESS HANDLING
-
+    
+    
+//    if num1 == screenNumber.text {
+//    num1 = ("-\(num1)")
+//    }
+    
+    //BUTTON PRESS HANDLING
+    
     
     func setCalcValues(label: String, kind: CalcButton.Kind) {
- 
-
-        if (alreadyHitDecimal(label)) {
+        
+        
+        
+        
+        if label == clear.titleLabel?.text {
+            
+            clearValues()   // seriously, pass this stuff to the calculator!
+            
+            return
+            
+        }
+        
+//        
+//        if label == negative.titleLabel?.text {
+//            
+//            println("negate!")
+//            
+//            negate()
+//            
+//
+//            return
+//        }
+//        
+        
+        
+        
+        if alreadyHitDecimal(label) {
             return
         }
         
@@ -277,7 +375,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
         else if prevTapIsOp == false && position == 1 && kind == CalcButton.Kind.CalcNumber {
             
             
-         
+            
             num1 += label
             
             setDisplay(num1)
@@ -294,17 +392,17 @@ class ViewController: UIViewController, CalcButtonDelegate {
             
             
             // CASE 2: WHILE ON POSITION ONE HITS OPERATOR
-            else if prevTapIsOp == false && position == 1 && kind == CalcButton.Kind.CalcOperator  {
+        else if prevTapIsOp == false && position == 1 && kind == CalcButton.Kind.CalcOperator  {
             
             
             if label == equals.titleLabel?.text {
-            
+                
                 num1 = ""
                 
                 return
             }
             
-                
+            
             oper = label
             
             // reset and recheck my values
@@ -321,7 +419,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
         }
             
             // CASE: WHILE ON POSITION TWO HITS ANOTHER OPERATOR
-            else if prevTapIsOp == true && position == 2 && kind == CalcButton.Kind.CalcOperator  {
+        else if prevTapIsOp == true && position == 2 && kind == CalcButton.Kind.CalcOperator  {
             
             oper = label
             
@@ -337,9 +435,9 @@ class ViewController: UIViewController, CalcButtonDelegate {
         }
             
             // CASE 4: HITS NUMBER AFTER HITTING OPERATOR
-            else if prevTapIsOp == true && position == 2 && kind == CalcButton.Kind.CalcNumber  {
+        else if prevTapIsOp == true && position == 2 && kind == CalcButton.Kind.CalcNumber  {
             
-            num2 += label
+            num2 += label   // fix negative zeroproblem here
             setDisplay(num2)
             
             // reset and recheck my values
@@ -354,7 +452,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
             
             
             // CASE 5: HITS ANOTHER NUMBER ON POSITION 3
-            else if prevTapIsOp == false && position == 3 && kind == CalcButton.Kind.CalcNumber  {
+        else if prevTapIsOp == false && position == 3 && kind == CalcButton.Kind.CalcNumber  {
             
             num2 += label
             setDisplay(num2)
@@ -373,7 +471,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
             
             // CASE 6: WHILE ON POSITION 3 HITS OPERATOR AFTER HITTING NUMBER
             // RUN CALCULATIONS HERE
-            else if prevTapIsOp == false && position == 3 && kind == CalcButton.Kind.CalcOperator  {
+        else if prevTapIsOp == false && position == 3 && kind == CalcButton.Kind.CalcOperator  {
             
             
             
@@ -385,7 +483,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
             num1 = self.total
             
             num2 = ""
-          
+            
             
             // reset and recheck my values
             prevTapIsOp = true
@@ -401,14 +499,14 @@ class ViewController: UIViewController, CalcButtonDelegate {
         }
             
             // CASE 7:WHILE ON POSITION 3 HITS OPERATOR AFTER HITTING OPERATOR
-            else if prevTapIsOp == true && position == 3 && kind == CalcButton.Kind.CalcOperator  {
+        else if prevTapIsOp == true && position == 3 && kind == CalcButton.Kind.CalcOperator  {
             
             
-
+            
             
             if label != equals.titleLabel?.text {      //strange ios calc behavior is to double total and display it?
-            
-            oper = label
+                
+                oper = label
             }
             
             // reset and recheck my values
@@ -425,7 +523,7 @@ class ViewController: UIViewController, CalcButtonDelegate {
         }
             
             // CASE 8:WHILE ON POSITION 3 HITS NUMBER AFTER HITTING OPERATOR
-            else if prevTapIsOp == true && position == 3 && kind == CalcButton.Kind.CalcNumber  {
+        else if prevTapIsOp == true && position == 3 && kind == CalcButton.Kind.CalcNumber  {
             
             
             num2 = label
@@ -451,8 +549,8 @@ class ViewController: UIViewController, CalcButtonDelegate {
         
         
     }
-
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

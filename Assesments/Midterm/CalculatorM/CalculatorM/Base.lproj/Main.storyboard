@@ -109,7 +109,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="qKD-zb-IfO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -222,7 +222,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="clear" destination="TUv-AH-vA9" id="oIW-2C-wcO"/>
+                        <outlet property="clear" destination="LVO-tz-lnS" id="4Tf-bV-ZGE"/>
                         <outlet property="divide" destination="sAw-Cy-82Y" id="7PL-4Y-BCW"/>
                         <outlet property="eight" destination="K3q-jL-YNg" id="k8O-Cd-Xs8"/>
                         <outlet property="equals" destination="TUv-AH-vA9" id="1j3-6w-DL5"/>
@@ -230,8 +230,10 @@
                         <outlet property="four" destination="RQC-yh-1Ac" id="dHg-Mb-IPR"/>
                         <outlet property="minus" destination="gCX-IN-45M" id="o45-26-Elu"/>
                         <outlet property="multiply" destination="YRJ-qV-Ref" id="mP4-3N-Dam"/>
+                        <outlet property="negative" destination="QSN-k3-A3Q" id="cf2-Ry-82V"/>
                         <outlet property="nine" destination="mIt-RZ-R5N" id="Io9-7a-FUL"/>
                         <outlet property="one" destination="g99-Y7-PUG" id="h5n-Ao-q0z"/>
+                        <outlet property="percent" destination="nMd-8d-MhH" id="xiN-Eu-cMS"/>
                         <outlet property="plus" destination="lh6-ib-axK" id="cfp-kj-rQ4"/>
                         <outlet property="point" destination="orb-bC-poi" id="wME-Vx-jiw"/>
                         <outlet property="screen" destination="lyM-u0-YWa" id="sm6-JU-r36"/>
