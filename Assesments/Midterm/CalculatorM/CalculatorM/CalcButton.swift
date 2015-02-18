@@ -21,7 +21,7 @@ protocol CalcButtonDelegate {
 // CHINESE STARTS HERE
 class CalcButton: UIButton {
     
-    let numerals = ["0","1","2"]
+    let numerals = ["0","1","2","3","4","5","6","7","8","9"]
     
     enum Kind {
         case CalcNumber
@@ -49,6 +49,7 @@ class CalcButton: UIButton {
         return ""
     }
     
+    //set the name
     func setName(name: String) {
         self.setTitle(name, forState: UIControlState.Normal)
         for numeral in numerals {
@@ -58,10 +59,11 @@ class CalcButton: UIButton {
                 return
             }
         }
-        //kind should be operator
-        self.kind = Kind.CalcOperator
-    }
+        
+        self.kind = Kind.CalcOperator    }
     
+    
+
     
     
     func getKind() ->Kind {
@@ -114,6 +116,8 @@ class CalcButton: UIButton {
     
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
+        println("sdfdf")
         delegate?.calcButtonPressed(self)
     }
     
