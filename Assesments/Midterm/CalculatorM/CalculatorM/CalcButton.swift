@@ -29,9 +29,9 @@ class CalcButton: UIButton {
     }
     
     var label: UILabel = UILabel()
-    var origColor = UIColor.purpleColor()
+//    var origColor = UIColor.purpleColor()
     var tapColor:UIColor?
-    var buttonColor = UIColor.purpleColor()
+//    var buttonColor = UIColor.purpleColor()
     var prevTapIsOp = false
     var total:Float = 0
     var delegate: CalcButtonDelegate?
@@ -64,7 +64,7 @@ class CalcButton: UIButton {
     
     
 
-    
+    /// ???(?!) Starts here
     
     func getKind() ->Kind {
         return self.kind
@@ -87,7 +87,7 @@ class CalcButton: UIButton {
         super.init(coder: aDecoder)
         commonInit()
     }
-    // CHINESE ENDS HERE
+    // ???? ENDS HERE
     
     func commonInit() {
         self.addSubview(label)

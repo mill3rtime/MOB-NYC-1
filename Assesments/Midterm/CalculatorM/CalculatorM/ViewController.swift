@@ -354,6 +354,8 @@ class ViewController: UIViewController, CalcButtonDelegate {
 //        }
 //        
         
+     
+        
         
         
         if alreadyHitDecimal(label) {
@@ -494,6 +496,23 @@ class ViewController: UIViewController, CalcButtonDelegate {
             
             println(" CASE 6: WHILE ONE POS 3 HITS OPERATOR AFTER HITTING NUMBER ")
             printStatus()
+            
+            
+            if label == equals.titleLabel?.text {
+                
+                num1 = ""
+                
+                oper = ""
+                
+                position = 1
+                
+                prevTapIsOp = false
+                
+                println("equals case")
+                printStatus()
+                
+            }
+            
             
             
         }
