@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cb5-j1-aH8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cb5-j1-aH8">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,6 +69,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView1" destination="f0Q-F0-v0f" id="KfQ-Ge-m2d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +111,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField2" destination="STF-CW-inV" id="Fva-8R-wNo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vO4-kS-iSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,6 +137,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Sh-MP-Fqy">
+                                <rect key="frame" x="252" y="154" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Qq4-qa-6cP"/>
+                                    <constraint firstAttribute="height" constant="30" id="nwl-10-l6v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,15 +153,21 @@
                             <constraint firstItem="zba-PB-Qsj" firstAttribute="top" secondItem="VXK-EB-7Kt" secondAttribute="topMargin" id="jDh-5e-MJk"/>
                             <constraint firstItem="rnR-sF-Djc" firstAttribute="top" secondItem="zba-PB-Qsj" secondAttribute="bottom" id="jJm-Xn-MZ0"/>
                             <constraint firstItem="zba-PB-Qsj" firstAttribute="leading" secondItem="VXK-EB-7Kt" secondAttribute="leadingMargin" id="jul-sE-bbV"/>
+                            <constraint firstAttribute="centerX" secondItem="0Sh-MP-Fqy" secondAttribute="centerX" id="rZW-zB-diX"/>
+                            <constraint firstItem="0Sh-MP-Fqy" firstAttribute="top" secondItem="Pqq-dz-Wdp" secondAttribute="bottom" constant="90" id="sdW-9P-ZSd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="W4c-fq-GLh">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="BAS-oR-Hjw">
                             <connections>
-                                <segue destination="03b-O5-o7r" kind="show" id="oNc-T8-vY0"/>
+                                <action selector="hitNext:" destination="lWA-Qe-LpN" id="V4G-ay-fAW"/>
+                                <segue destination="03b-O5-o7r" kind="show" id="bG6-6a-Iem"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="0Sh-MP-Fqy" id="6nF-P6-v47"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JI4-wm-MiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -180,11 +201,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2d0-E9-8FN">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="JPY-mR-vzn">
-                            <connections>
-                                <segue destination="ZvF-or-Q6s" kind="show" id="tmJ-2M-CqU"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="JPY-mR-vzn"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdY-tK-zGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
