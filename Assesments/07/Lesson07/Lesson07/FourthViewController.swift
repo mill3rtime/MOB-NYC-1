@@ -10,20 +10,37 @@ import UIKit
 
 class FourthViewController: UIViewController {
     
+    var sentFilePath: String?
+    var readText = ""
 
-    
-  
+    @IBOutlet weak var textView4: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-
-        
-        
-        
+        readAtFilePath()
+        SetText(readText)
         
 
         // Do any additional setup after loading the view.
+}
+
+
+
+func readAtFilePath() {
+    
+    if let filePath = sentFilePath {
+        
+        readText = String(contentsOfFile: filePath, encoding: NSUTF8StringEncoding, error: nil) ?? ""
     }
 }
+    
+    func SetText(text: String) {
+    
+    textView4.text = text
+    
+    }
+    
+}
+
+

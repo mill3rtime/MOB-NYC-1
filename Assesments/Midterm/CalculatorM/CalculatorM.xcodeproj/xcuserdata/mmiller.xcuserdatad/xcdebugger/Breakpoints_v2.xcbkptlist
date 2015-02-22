@@ -198,13 +198,99 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalculatorM/ViewController.swift"
-            timestampString = "445928492.968292"
+            timestampString = "446248353.659092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "5">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.four.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;CalculatorM.CalcButton&gt;"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.662402"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.four.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;CalculatorM.CalcButton&gt;"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.662589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.four.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;CalculatorM.CalcButton&gt;"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.66272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.init (CalculatorM.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; CalculatorM.ViewController"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.662848"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1905">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.init (CalculatorM.ViewController.Type)() -&gt; CalculatorM.ViewController"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.662962"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1922">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorM.ViewController.init (CalculatorM.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; CalculatorM.ViewController"
+                  moduleName = "CalculatorM"
+                  urlString = "file:///Users/mmiller/MOB-NYC-1/Assesments/Midterm/CalculatorM/CalculatorM/ViewController.swift"
+                  timestampString = "446248353.663076"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1933">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -201,8 +201,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2d0-E9-8FN">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="JPY-mR-vzn"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="JPY-mR-vzn">
+                            <connections>
+                                <segue destination="ZvF-or-Q6s" kind="show" id="Yro-wp-U6g"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView4" destination="sLH-y3-8UM" id="3xQ-Zn-wWS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdY-tK-zGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

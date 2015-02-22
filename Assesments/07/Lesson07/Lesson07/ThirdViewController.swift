@@ -18,13 +18,21 @@ class ThirdViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as NSString
+    var fullDocumentsPath: String?
     var textValue = ""
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
         persistText()
+        createPath()
         writeText()
+        
+        let destinationVc = segue.destinationViewController as FourthViewController
+        
+        if let pathToWriteTo = fullDocumentsPath {
+        destinationVc.sentFilePath = pathToWriteTo
+        }
 
     }
     
@@ -39,11 +47,17 @@ class ThirdViewController: UIViewController {
         
     }
     
-    func writeText(){
+    
+    func createPath() {
+        fullDocumentsPath = documentsPath.stringByAppendingPathComponent("newFile")
+    }
+    
+    func writeText() {
         
-        let fullDocumentsPath = documentsPath.stringByAppendingPathComponent("newFile")
+        if let pathToWriteTo = fullDocumentsPath {
         
-        textValue.writeToFile(fullDocumentsPath, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+        textValue.writeToFile(pathToWriteTo, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+        }
     }
 
 }
