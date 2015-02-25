@@ -4,13 +4,18 @@
 //
 //  Created by Rudd Taylor on 2/23/15.
 //  Copyright (c) 2015 ga. All rights reserved.
-//
+//list without persis, when do we want to read (view loads) when to write
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UIAlertViewDelegate {
 
     var items: [String] = []
+    
+
+  
+
+    
     
     @IBAction func didTapAdd(sender: AnyObject) {
         var alert = UIAlertView(title: "Item Name?", message: "Enter an item name", delegate: self, cancelButtonTitle: "Dismiss", otherButtonTitles: "Add")
@@ -23,6 +28,9 @@ class ViewController: UIViewController, UITableViewDataSource, UIAlertViewDelega
             if let textInAlert = alertView.textFieldAtIndex(0)?.text {
                 self.items.append(textInAlert)
                 self.tableView.reloadData()
+                makeMyFile()
+                
+                
             }
         }
     }
@@ -30,8 +38,33 @@ class ViewController: UIViewController, UITableViewDataSource, UIAlertViewDelega
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        let arrayFromFile = NSArray(contentsOfURL: (getPath()))
+       
+        self.items = arrayFromFile as [String]
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    func getPath() ->NSURL {
+        
+        var documentsPath: AnyObject = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        
+        var documentsPathUrl = documentsPath as NSURL
+        
+        return documentsPathUrl.URLByAppendingPathComponent("myFile.plist")
+    }
+    
+
+    
+    func makeMyFile() {
+        
+       (self.items as NSArray).writeToURL((getPath()), atomically: true)
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

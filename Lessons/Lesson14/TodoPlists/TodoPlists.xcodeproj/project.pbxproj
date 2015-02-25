@@ -13,6 +13,7 @@
 		5D0FAA501A9BF636009DFC5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D0FAA4F1A9BF636009DFC5E /* Images.xcassets */; };
 		5D0FAA531A9BF636009DFC5E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0FAA511A9BF636009DFC5E /* LaunchScreen.xib */; };
 		5D0FAA5F1A9BF636009DFC5E /* TodoPlistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0FAA5E1A9BF636009DFC5E /* TodoPlistsTests.swift */; };
+		D48EBF401A9C069100A9D9AE /* TODOSETTINGS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D48EBF3F1A9C069100A9D9AE /* TODOSETTINGS.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		5D0FAA581A9BF636009DFC5E /* TodoPlistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoPlistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0FAA5D1A9BF636009DFC5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D0FAA5E1A9BF636009DFC5E /* TodoPlistsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPlistsTests.swift; sourceTree = "<group>"; };
+		D48EBF3F1A9C069100A9D9AE /* TODOSETTINGS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TODOSETTINGS.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		5D0FAA3A1A9BF636009DFC5E = {
 			isa = PBXGroup;
 			children = (
+				D48EBF3F1A9C069100A9D9AE /* TODOSETTINGS.bundle */,
 				5D0FAA451A9BF636009DFC5E /* TodoPlists */,
 				5D0FAA5B1A9BF636009DFC5E /* TodoPlistsTests */,
 				5D0FAA441A9BF636009DFC5E /* Products */,
@@ -194,6 +197,7 @@
 			files = (
 				5D0FAA4E1A9BF636009DFC5E /* Main.storyboard in Resources */,
 				5D0FAA531A9BF636009DFC5E /* LaunchScreen.xib in Resources */,
+				D48EBF401A9C069100A9D9AE /* TODOSETTINGS.bundle in Resources */,
 				5D0FAA501A9BF636009DFC5E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				5D0FAA641A9BF636009DFC5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D0FAA651A9BF636009DFC5E /* Build configuration list for PBXNativeTarget "TodoPlistsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				5D0FAA671A9BF636009DFC5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -242,6 +242,9 @@
                             <constraint firstItem="e66-bG-ZBU" firstAttribute="top" secondItem="qPA-4h-ilE" secondAttribute="bottom" id="wFw-wb-w01"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView9" destination="qPA-4h-ilE" id="2Dw-fP-p5A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oU3-RH-uDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -259,19 +262,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBD-AK-qjV">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="asdfasdfasdf" translatesAutoresizingMaskIntoConstraints="NO" id="nBD-AK-qjV">
                                 <rect key="frame" x="16" y="0.0" width="568" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">TODO Five: Strings can be entered into this text box in a space-delimited fashion. They represent an array of strings. E.g. the entry "a b c" corresponds to array ["a", "b", "c"]. Save the array of strings that corresponds to the text in this text box to a file.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-If-Vqc">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPress:" destination="ZvF-or-Q6s" eventType="touchUpInside" id="cGg-YW-I9B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zK6-eo-u0G" firstAttribute="top" secondItem="nBD-AK-qjV" secondAttribute="bottom" id="0zj-su-Nni"/>
                             <constraint firstItem="nBD-AK-qjV" firstAttribute="leading" secondItem="0yb-HF-0ZL" secondAttribute="leadingMargin" id="IhN-YA-JIO"/>
                             <constraint firstItem="nBD-AK-qjV" firstAttribute="top" secondItem="0yb-HF-0ZL" secondAttribute="topMargin" id="ZiI-7T-YZ6"/>
+                            <constraint firstAttribute="centerX" secondItem="aAN-If-Vqc" secondAttribute="centerX" id="bzk-BC-YdV"/>
+                            <constraint firstAttribute="centerY" secondItem="aAN-If-Vqc" secondAttribute="centerY" id="o9U-sJ-OJx"/>
                             <constraint firstItem="nBD-AK-qjV" firstAttribute="trailing" secondItem="0yb-HF-0ZL" secondAttribute="trailingMargin" id="to1-OL-J0D"/>
                         </constraints>
                     </view>
@@ -282,6 +295,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="nBD-AK-qjV" id="qZB-Xa-NNG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lsy-el-VFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
