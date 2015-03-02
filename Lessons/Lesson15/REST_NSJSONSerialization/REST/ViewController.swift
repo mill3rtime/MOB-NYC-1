@@ -17,6 +17,7 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         if let url = NSURL(string: "http://www.mashable.com/stories.json") {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
                 var jsonError: NSError?
