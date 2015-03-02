@@ -17,7 +17,7 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let url = NSURL(string: "http://www.reddit.com/.json") {
+        if let url = NSURL(string: "http://www.mashable.com/stories.json") {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
                 var jsonError: NSError?
                 if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: &jsonError) as? NSDictionary {
@@ -38,13 +38,13 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
         return 1
     }
     
+    //ROWS IN SECTION
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let json = self.json {
-            if let data = json["data"] as? NSDictionary {
-                if let children = data["children"] as? NSArray {
-                    return children.count
+            if let newness = json["new"] as? NSArray {
+              return newness.count
+                
                 }
-            }
         }
         return 0
     }
@@ -55,18 +55,20 @@ class ViewController: UITableViewController, UITableViewDataSource, UITableViewD
             cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
         }
         
+        //TITLE
         if let json = self.json {
-            if let data = json["data"] as? NSDictionary {
-                if let children = data["children"] as? NSArray {
-                    if let child = children[indexPath.row] as? NSDictionary {
-                        if let data = child["data"] as? NSDictionary {
-                            if let title = data["title"] as? NSString {
-                                cell.textLabel?.text = title
-                            }
+            if let newness = json["new"] as? NSArray {
+                if let subNewness = newness[indexPath.row] as? NSDictionary {
+                    if let author = subNewness["author"] as? NSString {
+                     
+                            
+                                cell.textLabel?.text = author
+                        
+            
                         }
                     }
                 }
-            }
+        
         }
         
         return cell
