@@ -1,11 +1,3 @@
-// Playground - noun: a place where people can play
-
-import UIKit
-import XCPlayground
-
-// Let asynchronous code run
-XCPSetExecutionShouldContinueIndefinitely()
-
 //
 //  ViewController.swift
 //  HOMEWORK 8
@@ -16,6 +8,7 @@ XCPSetExecutionShouldContinueIndefinitely()
 
 import UIKit
 import Foundation
+import SwiftyJSON
 
 
 // PLAYGROUNDS KEPT CRASHING SO I MOVED EVERYTHING HERE
@@ -199,6 +192,54 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
+    
+    //TODO four: Make a successful network connection to http://api.openweathermap.org/data/2.5/weather?q=New%20York,US, an API that speaks JSON. Populate a your above-defined model with the contents of that JSON using SwiftyJSON, then print out the model.
+    
+    
+    
+    class Weather2 {
+        var weatherDesc2: NSString?
+        init(data: NSData){
+            
+            let weatherDict = JSON(data: data, options: .allZeros, error: nil)
+            
+            var weatherDesc = weatherDict["weather"][0]["description"].stringValue
+                        self.weatherDesc2 = weatherDesc
+                    }
+        
+    
+        //getter that takes in a closure
+        
+        class func getWeather2(completionHandler: ((Weather2) -> Void)){
+            
+            if let weatherURL = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=New%20York,US"){
+                let weatherSession = NSURLSession.sharedSession().dataTaskWithURL(weatherURL, completionHandler: { (data, response, error) -> Void in
+                    if let weatherDict = NSJSONSerialization.JSONObjectWithData(data, options: .allZeros, error:nil)  as? NSDictionary {
+                        var weather2 = Weather2(data: data)  // the getter instantiates
+                        if let weatherDesc = weather2.weatherDesc2 {
+                            completionHandler(weather2)
+                        }
+                    }
+                    
+                    let weatherDict = JSON(data: data, options: .allZeros, error: nil)
+                    
+                    var weatherDesc = weatherDict["weather"][0]["description"].stringValue
+                })
+                
+                weatherSession.resume()
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
 
 
 
