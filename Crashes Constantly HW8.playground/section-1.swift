@@ -39,12 +39,12 @@ if let url = NSURL(string: "http://generalassemb.ly/foobar.baz") {
     let task = NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
         var dataString2 = NSString(data: data, encoding: NSUTF8StringEncoding)
         
-            if let someError = error {
+        if let someError = error {
             var errorString = someError.localizedDescription
-                println(errorString)
+            println(errorString)
         }
         
-        var responseString = response1.description
+        var responseString = response.description
         
         
         
@@ -52,14 +52,14 @@ if let url = NSURL(string: "http://generalassemb.ly/foobar.baz") {
         // var errorCode = response.statusCode
         
         
-                
-            
-      //?! status code and body
-            
-    
+        
+        
+        //?! status code and body
+        
+        
         
     })
-
+    
     println(task)
     
     task.resume()
